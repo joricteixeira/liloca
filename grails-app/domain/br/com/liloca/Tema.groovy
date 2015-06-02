@@ -9,6 +9,14 @@ class Tema {
     static constraints = {
     }
 
+    static mapping = {
+        table 'TB_TEMA'
+        version false
+
+        id column: 'ID'
+        nome column: 'NOME'
+    }
+
 
 
 

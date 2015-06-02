@@ -11,3 +11,54 @@
 /* ----------------------------------------
 	Please, You may put custom css here
 ---------------------------------------- */
+
+body{
+    background-color: #ffffdd;
+}
+
+.navbar{
+    min-height: 80px;
+    background-color: #ffaaaa;
+}
+
+.navbar-inverse{
+    border-color: #aa8888;
+}
+
+.navbar-form{
+    margin-top: 22px;
+}
+
+.thumbnail{
+    border: none;
+    background-color: #ffffff;
+}
+
+.featured-thumbnail{
+    border-radius: 16px;
+    padding: 15px;
+    box-shadow: 0px 0px 3px #888888;
+}
+
+li{
+    padding: 4px;
+    list-style: none;
+    background: url('/images/shadow.png') no-repeat right bottom 3px;
+    overflow: hidden;
+}
+
+figure.thumbnail{
+    padding: 0;
+    overflow: hidden;
+}
+
+
+
+/*Parallax da Home*/
+#parallaxBar{
+    height:750px;
+    background-color:#004c82;
+    background: url('http://livedemo00.template-help.com/wordpress_50935/wp-content/uploads/2014/07/slide_1.jpg') 50% 0 fixed;
+    position: relative;
+    background-repeat: no-repeat;
+}

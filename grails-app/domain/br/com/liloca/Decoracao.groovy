@@ -10,4 +10,14 @@ class Decoracao {
 
     static constraints = {
     }
+
+    static mapping = {
+        table 'TB_DECORACAO'
+        version false
+
+        id column: 'ID'
+        nome column: 'NOME'
+        valor column: 'VALOR'
+        tema: 'TEMA_ID'
+    }
 }
