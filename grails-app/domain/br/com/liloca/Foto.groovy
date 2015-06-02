@@ -9,4 +9,13 @@ class Foto {
 
     static constraints = {
     }
+
+    static mapping = {
+        table 'TB_FOTO'
+        version false
+
+        id column: 'ID'
+        titulo column: 'TITULO'
+        url column: 'URL'
+    }
 }
