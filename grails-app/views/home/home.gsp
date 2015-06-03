@@ -60,7 +60,7 @@
         </div>
 
         <div class="row">
-            <div class="col-xs-12 col-md-4">
+            <div class="col-xs-12 .col-sm-4 col-md-4">
                 <li>
                     <div class="featured-thumbnail thumbnail">
                         <figure class="thumbnail">
@@ -70,7 +70,7 @@
                     </div>
                 </li>
             </div>
-            <div class="col-xs-12 col-md-4">
+            <div class="col-xs-12 .col-sm-4 col-md-4">
                 <li>
                     <div class="featured-thumbnail thumbnail">
                         <figure class="thumbnail">
@@ -79,7 +79,7 @@
                     </div>
                 </li>
             </div>
-            <div class="col-xs-12 col-md-4">
+            <div class="col-xs-12 .col-sm-4 col-md-4">
                 <li>
                     <div class="featured-thumbnail thumbnail">
                         <figure class="thumbnail">
