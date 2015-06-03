@@ -6,4 +6,8 @@ class HomeController {
 
         render(view: '/home/home')
     }
+
+    def teste(){
+        render 'OK'
+    }
 }
