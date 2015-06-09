@@ -81,15 +81,34 @@
                 <div class="row text-center">
                     <div class="span12 social-nets-wrapper" data-motopress-type="static" data-motopress-static-file="static/static-social-networks.php">
                         <ul class="social">
-                            <li><a href="#" title="facebook"><img src="http://livedemo00.template-help.com/wordpress_50935/wp-content/themes/theme50935/images/social/facebook.png" alt="facebook"></a></li><li><a href="#" title="twitter"><img src="http://livedemo00.template-help.com/wordpress_50935/wp-content/themes/theme50935/images/social/twitter.png" alt="twitter"></a></li><li><a href="#" title="google"><img src="http://livedemo00.template-help.com/wordpress_50935/wp-content/themes/theme50935/images/social/google.png" alt="google"></a></li>
-
-                            <li><a href="#" title="youtube"><img src="http://livedemo00.template-help.com/wordpress_50935/wp-content/themes/theme50935/images/social/youtube.png" alt="youtube"></a></li></ul> </div>
+                            <li>
+                                <a href="#" title="facebook">
+                                    <img src="${resource(dir: 'images/social', file: 'facebook.png')}" alt="facebook">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="twitter">
+                                    <img src="${resource(dir: 'images/social', file: 'twitter.png')}" alt="twitter">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="google">
+                                    <img src="${resource(dir: 'images/social', file: 'google.png')}" alt="google">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="youtube">
+                                    <img src="${resource(dir: 'images/social', file: 'youtube.png')}" alt="youtube">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="row text-center">
                     <div class="span12" data-motopress-type="static" data-motopress-static-file="static/static-footer-text.php">
                         <div id="footer-text" class="footer-text">
-                                <a href="http://livedemo00.template-help.com/wordpress_50935/" title="The most tender feelings in perfect shape!" class="site-name">Liloca Festas</a> © 2015 Todos direitos reservados <i>|</i> <a href="" title="Política de Privacidade">Política de Privacidade</a>
+                                <a href="${link(controller: "home", action: "index")}" title="Liloca Festas - Decoração de festa infatil" class="site-name">Liloca Festas</a> © 2015 Todos direitos reservados <i>|</i> <a href="" title="Política de Privacidade">Política de Privacidade</a>
                         </div> </div>
                 </div>
 

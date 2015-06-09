@@ -22,20 +22,6 @@
             //Captura cada elemento section com o data-type "background"
             //Captura o evento scroll do navegador e modifica o backgroundPosition de acordo com seu deslocamento.
             $(window).scroll(function() {
-
-                /*
-                if($window.scrollTop() > 450){
-                    jQuery("#logo").attr("width","70");
-                    jQuery(".navbar-brand").attr("style","padding: 5px");
-                }else if(($window.scrollTop() > 1) && ($window.scrollTop() < 450)){
-                    jQuery("#logo").attr("width","100");
-                    jQuery(".navbar-brand").attr("style","padding: 10px");
-                }else{
-                    jQuery("#logo").attr("width","188");
-                    jQuery(".navbar-brand").attr("style","padding: 15px");
-                }
-                */
-
                 if(($window.scrollTop() > 200) && ($window.scrollTop() < 300)){
                     var larguraImagem = (-1.2)*($window.scrollTop()) + 430;
                     var paddingImagem = ((0.1)*($window.scrollTop()) - 35)*(-1) - 1;
@@ -43,11 +29,10 @@
                     $("#logo").attr("width",larguraImagem);
                     $(".navbar-brand").attr("style","padding: "+ paddingImagem+"px");
 
-                    jQuery("#navbarPass").attr("value",a);
                 }else if($window.scrollTop() > 300){
                     $("#logo").attr("width","70");
                     $(".navbar-brand").attr("style","padding: 5px");
-                }else if($window.scrollTop() < 300){
+                }else if($window.scrollTop() < 200){
                     $("#logo").attr("width","190");
                     $(".navbar-brand").attr("style","padding: 15px");
                 }
@@ -99,7 +84,7 @@
                 <li>
                     <div class="featured-thumbnail thumbnail">
                         <figure class="thumbnail">
-                            <img src="http://livedemo00.template-help.com/wordpress_50935/wp-content/uploads/2014/07/img_1-338x268.jpg" alt="Lorem ipsum dolor.">
+                            <img src="${resource(dir: 'images', file: 'img_1-338x268.jpg')}" alt="Lorem ipsum dolor.">
                         </figure>
                         <h5>Titulo</h5>
                     </div>
@@ -109,7 +94,7 @@
                 <li>
                     <div class="featured-thumbnail thumbnail">
                         <figure class="thumbnail">
-                                <img src="http://livedemo00.template-help.com/wordpress_50935/wp-content/uploads/2014/07/img_1-338x268.jpg" alt="Lorem ipsum dolor.">
+                                <img src="${resource(dir: 'images', file: 'img_1-338x268.jpg')}" alt="Lorem ipsum dolor.">
                         </figure>
                     </div>
                 </li>
@@ -118,7 +103,7 @@
                 <li>
                     <div class="featured-thumbnail thumbnail">
                         <figure class="thumbnail">
-                            <img src="http://livedemo00.template-help.com/wordpress_50935/wp-content/uploads/2014/07/img_1-338x268.jpg" alt="Lorem ipsum dolor.">
+                            <img src="${resource(dir: 'images', file: 'img_1-338x268.jpg')}" alt="Lorem ipsum dolor.">
                         </figure>
                     </div>
                 </li>
