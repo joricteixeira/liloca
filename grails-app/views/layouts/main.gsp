@@ -16,10 +16,9 @@
         <link rel="stylesheet" href="${resource(dir: 'css', file: 'bootstrap.min.css')}" type="text/css">
         <link rel="stylesheet" href="${resource(dir: 'css', file: 'style.css')}" type="text/css">
 
-
-    <script type="text/javascript" src="http://livedemo00.template-help.com/wordpress_50935/wp-content/themes/theme50935/js/parallaxSlider.js?ver=1.0"></script>
-
-    <script type="text/javascript" src="${resource(dir: 'js', file: 'jquery-1.11.3.min.js')}"></script>
+        <script type="text/javascript" src="${resource(dir: 'js', file: 'jquery-1.11.3.min.js')}"></script>
+        <script type="text/javascript" src="${resource(dir: 'js', file: 'bootstrap.min.js')}"></script>
+        <script type="text/javascript" src="${resource(dir: 'js', file: 'parallax.min.js')}"></script>
 
 		<g:layoutHead/>
 
@@ -43,10 +42,10 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <form class="navbar-form navbar-right">
                         <div class="form-group">
-                            <input type="text" placeholder="Email" class="form-control">
+                            <input id="navbarEmail" type="text" placeholder="Email" class="form-control">
                         </div>
                         <div class="form-group">
-                            <input type="password" placeholder="Password" class="form-control">
+                            <input id="navbarPass" type="text" placeholder="Password" class="form-control">
                         </div>
                         <button type="submit" class="btn btn-success">Sign in</button>
                     </form>
@@ -65,6 +64,37 @@
             <g:message code="spinner.alt" default="Loading&hellip;"/>
         </div>
 
+        <footer class="footer">
+            <div class="container">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="separador"></div>
+                </div>
+                <br>
+                <div class="row text-center">
+                    <div class="span12 social-nets-wrapper" data-motopress-type="static" data-motopress-static-file="static/static-social-networks.php">
+                        <ul class="social">
+                            <li><a href="#" title="facebook"><img src="http://livedemo00.template-help.com/wordpress_50935/wp-content/themes/theme50935/images/social/facebook.png" alt="facebook"></a></li><li><a href="#" title="twitter"><img src="http://livedemo00.template-help.com/wordpress_50935/wp-content/themes/theme50935/images/social/twitter.png" alt="twitter"></a></li><li><a href="#" title="google"><img src="http://livedemo00.template-help.com/wordpress_50935/wp-content/themes/theme50935/images/social/google.png" alt="google"></a></li>
+
+                            <li><a href="#" title="youtube"><img src="http://livedemo00.template-help.com/wordpress_50935/wp-content/themes/theme50935/images/social/youtube.png" alt="youtube"></a></li></ul> </div>
+                </div>
+
+                <div class="row text-center">
+                    <div class="span12" data-motopress-type="static" data-motopress-static-file="static/static-footer-text.php">
+                        <div id="footer-text" class="footer-text">
+                                <a href="http://livedemo00.template-help.com/wordpress_50935/" title="The most tender feelings in perfect shape!" class="site-name">Liloca Festas</a> © 2015 Todos direitos reservados <i>|</i> <a href="" title="Política de Privacidade">Política de Privacidade</a>
+                        </div> </div>
+                </div>
+
+            </div>
+        </footer>
 		<r:layoutResources />
 	</body>
 </html>
