@@ -86,7 +86,7 @@
                         <figure class="thumbnail">
                             <img src="${resource(dir: 'images', file: 'img_1-338x268.jpg')}" alt="Lorem ipsum dolor.">
                         </figure>
-                        <h5>Titulo</h5>
+                        <h5>${tema.nome2}</h5>
                     </div>
                 </li>
             </div>
