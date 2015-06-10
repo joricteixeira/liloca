@@ -17,7 +17,7 @@ class Tema {
         nome column: 'NOME'
     }
 
-
-
-
+    def Foto getFotoCapa() {
+        decoracoes.getAt(0).fotos.getAt(0)
+    }
 }

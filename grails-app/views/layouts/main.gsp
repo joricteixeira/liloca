@@ -20,6 +20,34 @@
         <script type="text/javascript" src="${resource(dir: 'js', file: 'bootstrap.min.js')}"></script>
         <script type="text/javascript" src="${resource(dir: 'js', file: 'parallax.min.js')}"></script>
 
+        <!-- LightBox -->
+        <link rel="stylesheet" href="${resource(dir: 'css', file: 'magnific-popup.css')}" type="text/css">
+        <script type="text/javascript" src="${resource(dir: 'js', file: 'jquery.magnific-popup.min.js')}"></script>
+
+        <link href='http://fonts.googleapis.com/css?family=Rum+Raisin' rel='stylesheet' type='text/css'>
+
+        <!-- TODO este script deve ser gerado dinamicamente -->
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("[rel^='prettyPhoto']").magnificPopup({
+                    items: [
+                        {
+                            src: '${resource(dir: 'images', file: 'callout_1.jpg')}'
+                        },
+                        {
+                            src: '${resource(dir: 'images', file: 'callout_2.jpg')}'
+                        }
+                    ],
+                    gallery: {
+                        enabled: true
+                    },
+                    type:'image'
+                });
+            });
+        </script>
+
+
+
 		<g:layoutHead/>
 
 		<g:javascript library="application"/>		
