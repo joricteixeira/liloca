@@ -18,6 +18,6 @@ class Decoracao {
         id column: 'ID'
         nome column: 'NOME'
         valor column: 'VALOR'
-        tema: 'TEMA_ID'
+        tema column: 'TEMA_ID'
     }
 }

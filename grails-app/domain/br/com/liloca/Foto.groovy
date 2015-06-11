@@ -17,6 +17,6 @@ class Foto {
         id column: 'ID'
         titulo column: 'TITULO'
         url column: 'URL'
-        decoracao: 'DECORACAO_ID'
+        decoracao column: 'DECORACAO_ID'
     }
 }
