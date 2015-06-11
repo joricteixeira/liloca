@@ -47,6 +47,59 @@
         </script>
 
 
+    <script>
+        $(document).ready(function(){
+            $window = $(window);
+            //Captura cada elemento section com o data-type "background"
+            $('section[data-type="background"]').each(function(){
+                var $scroll = $(this);
+                //Captura o evento scroll do navegador e modifica o backgroundPosition de acordo com seu deslocamento.
+                $(window).scroll(function() {
+                    var yPos = -($window.scrollTop() / $scroll.data('speed'));
+                    var coords = '50% '+ yPos + 'px';
+                    $scroll.css({ backgroundPosition: coords });
+                });
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $window = $(window);
+            //Captura cada elemento section com o data-type "background"
+            //Captura o evento scroll do navegador e modifica o backgroundPosition de acordo com seu deslocamento.
+            $(window).scroll(function() {
+                if(($window.scrollTop() > 200) && ($window.scrollTop() < 300)){
+                    var larguraImagem = (-1.2)*($window.scrollTop()) + 430;
+                    var paddingImagem = ((0.1)*($window.scrollTop()) - 35)*(-1) - 1;
+
+                    $("#logo").attr("width",larguraImagem);
+                    $(".navbar-brand").attr("style","padding: "+ paddingImagem+"px");
+
+                }else if($window.scrollTop() > 300){
+                    $("#logo").attr("width","70");
+                    $(".navbar-brand").attr("style","padding: 5px");
+                }else if($window.scrollTop() < 200){
+                    $("#logo").attr("width","190");
+                    $(".navbar-brand").attr("style","padding: 15px");
+                }
+
+                /*
+                 -1,2s + 430 = w
+                 100
+                 */
+
+
+
+                /*
+                 var yPos = -($window.scrollTop() / $scroll.data('speed'));
+                 var coords = '50% '+ yPos + 'px';
+                 $scroll.css({ backgroundPosition: coords });
+                 */
+            });
+
+        });
+    </script>
 
 		<g:layoutHead/>
 
