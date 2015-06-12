@@ -3,6 +3,7 @@ package br.com.liloca
 class Tema {
 
     String nome
+    boolean destaque
 
     static hasMany = [decoracoes: Decoracao]
 
@@ -15,6 +16,7 @@ class Tema {
 
         id column: 'ID'
         nome column: 'NOME'
+        destaque column: 'DESTAQUE'
     }
 
     def Foto getFotoCapa() {

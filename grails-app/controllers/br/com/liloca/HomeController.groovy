@@ -8,7 +8,7 @@ class HomeController {
 
 
         //TODO adicionar lógica para obter somente destaques
-        def temas = Tema.findAll()
+        def temas = Tema.findAllByDestaque(true)
 
         render(view: '/home/home', model: [temasDestaque: temas])
     }

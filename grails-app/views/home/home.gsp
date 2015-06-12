@@ -28,7 +28,7 @@
                                         <img src="${tema.fotoCapa.url}" alt="Lorem ipsum dolor.">
                                     </a>
                                 </figure>
-                                <h3>
+                                <h3 class="text-center">
                                     <a href="#">
                                         ${tema.nome}
                                     </a>
