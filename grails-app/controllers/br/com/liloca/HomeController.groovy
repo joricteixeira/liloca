@@ -6,10 +6,10 @@ class HomeController {
 
         def temas = Tema.findAllByDestaque(true, [max: 3])
 
-        render(view: '/home/home', model: [temasDestaque: temas])
-    }
+        if (temas.size() < 3) {
+            temas.clear();
+        }
 
-    def teste(){
-        render 'OK'
+        render(view: '/home/home', model: [temasDestaque: temas])
     }
 }
