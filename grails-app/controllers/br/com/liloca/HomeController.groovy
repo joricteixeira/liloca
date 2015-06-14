@@ -1,6 +1,7 @@
 package br.com.liloca
 
 class HomeController {
+    def definicoesSistemaService
 
     def index() {
 

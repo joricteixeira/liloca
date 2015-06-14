@@ -17,13 +17,13 @@ hibernate {
 environments {
     development {
         dataSource {
-            dbCreate = "" // one of 'create', 'create-drop', 'update', 'validate', ''
+            dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
 
-            url = "jdbc:mysql://mysql.liloca.com.br/liloca"
+            url = "jdbc:mysql://localhost:3306/liloca"
             driverClassName = "com.mysql.jdbc.Driver"
             dialect = org.hibernate.dialect.MySQL5InnoDBDialect
-            username = "liloca"
-            password = "lilocasql"
+            username = "root"
+            password = ""
 
             properties {
                 // See http://grails.org/doc/latest/guide/conf.html#dataSource for documentation

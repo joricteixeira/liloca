@@ -2,16 +2,11 @@
     <meta name="layout" content="main" />
 </head>
 <body>
-    <!--section id="parallaxBar" data-speed="6" data-type="background" style="background-color: #FFCC33;">
-        <div class="container-fluid">
-        </div>
-    </section-->
-    <!--div class="parallax-window" data-parallax="scroll" data-image-src="${resource(dir: 'images', file: 'grails_logo.png')}"></div-->
-    <div class="parallax-window" data-parallax="scroll" data-image-src="/liloca/static/images/IMG_1745.jpg"></div>
+    <div class="parallax-window" data-parallax="scroll" data-image-src="/liloca/static/images/IMG_1745_2.jpg"></div>
 
     <div class="container">
 
-        <g:if test="${temasDestaque.size() >= 1}">
+        <g:if test="${!temasDestaque.isEmpty()}">
             <div class="row">
                 <div class="col-xs-12">
                     <h2 class="title-box_primary text-center text-uppercase">Temas em Destaque!</h2>
@@ -24,7 +19,7 @@
                         <li>
                             <div class="featured-thumbnail thumbnail">
                                 <figure class="thumbnail">
-                                    <a href="${resource(dir: 'images', file: 'img_1-338x268.jpg')}" rel="prettyPhoto" title="${tema.nome}">
+                                    <a href="#" rel="prettyPhoto" title="${tema.nome}">
                                         <img src="${tema.fotoCapa.url}" alt="Lorem ipsum dolor.">
                                     </a>
                                 </figure>
@@ -41,47 +36,35 @@
         </g:if>
         <div class="separador"></div>
         <div class="row">
-            <h2 class="text-center">Lorem ipsum dolor sit amet</h2>
+            <h2 class="text-center">Faça sua festa conosco!</h2>
         </div>
         <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="col-xs-12 col-sm-6 col-md-3 text-center">
                 <div class="thumbnail">
-                    <h5 class="text-center">
-                        <a href="etiam-cursus-leo-vel-metus/lorem-ipsum-dolor" title="" target="_self">
-                            Free shipping <b>on orders over $30</b>
-                        </a>
-                    </h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="col-xs-12 col-sm-6 col-md-3 text-center">
                 <div class="thumbnail">
-                    <h5 class="text-center">
-                        <a href="etiam-cursus-leo-vel-metus/lorem-ipsum-dolor" title="" target="_self">
-                            Free shipping <b>on orders over $30</b>
-                        </a>
-                    </h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="col-xs-12 col-sm-6 col-md-3 text-center">
                 <div class="thumbnail">
-                    <h5 class="text-center">
-                        <a href="etiam-cursus-leo-vel-metus/lorem-ipsum-dolor" title="" target="_self">
-                            Free shipping <b>on orders over $30</b>
-                        </a>
+                    <h5>
+                        <img src="${resource(dir: 'images', file: 'icon_3.png')}">
                     </h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                    <b>Entre em contato</b>
+                    <p>(21) 96468-8133</p>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="col-xs-12 col-sm-6 col-md-3 text-center">
                 <div class="thumbnail">
-                    <h5 class="text-center">
-                        <a href="etiam-cursus-leo-vel-metus/lorem-ipsum-dolor" title="" target="_self">
-                            Free shipping <b>on orders over $30</b>
-                        </a>
+                    <b>Curta a gente no facebook</b>
+                    <h5>
+                        <img src="${resource(dir: 'images', file: 'icon_4.png')}">
                     </h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                    <p>/festadaliloca</p>
                 </div>
             </div>
         </div>

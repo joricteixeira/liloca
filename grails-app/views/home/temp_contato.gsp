@@ -75,21 +75,12 @@
                                                 <div class="motopress-code-obj">
                                                     <div class="wpcf7" id="wpcf7-f208-p14-o1">
                                                         <div class="screen-reader-response"></div>
-                                                        <div id="retorno-envio">
 
-                                                            <g:if test="${((mensagemEnvio != "") && (mensagemEnvio != null))}">
 
-                                                                <div
-                                                                    <g:if test="${sucessoEnvio}">class="alert alert-success"</g:if>
-                                                                    <g:else>class="alert alert-danger"</g:else>
-                                                                    role="alert">
-                                                                        ${mensagemEnvio}
-                                                                </div>
 
-                                                            </g:if>
 
                                                             <g:render template="/mail/formulario" />
-                                                        </div>
+
                                                     </div>
                                                 </div>
                                             </div>

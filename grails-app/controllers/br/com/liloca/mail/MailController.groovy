@@ -16,6 +16,7 @@ class MailController {
             mensagemEnvio = "Ocorreu um erro no envio, tente novamente mais tarde!"
         }
 
-        render (view:  "/home/temp_contato", model: [sucessoEnvio: sucesso, mensagemEnvio: mensagemEnvio])
+
+        render (view:  "/mail/_formulario", model: [sucessoEnvio: sucesso, mensagemEnvio: mensagemEnvio])
     }
 }

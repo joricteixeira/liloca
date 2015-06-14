@@ -27,7 +27,7 @@
         <link href='http://fonts.googleapis.com/css?family=Rum+Raisin' rel='stylesheet' type='text/css'>
 
         <!-- TODO este script deve ser gerado dinamicamente -->
-        <script type="text/javascript">
+        <!--script type="text/javascript">
             $(document).ready(function() {
                 $("[rel^='prettyPhoto']").magnificPopup({
                     items: [
@@ -44,7 +44,7 @@
                     type:'image'
                 });
             });
-        </script>
+        </script-->
 
 
     <script>
@@ -110,27 +110,12 @@
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
                     <a class="navbar-brand" href="#">
                         <img id="logo" src="${resource(dir: 'images', file: 'logo.png')}">
                     </a>
+
                 </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <form class="navbar-form navbar-right">
-                        <div class="form-group">
-                            <input id="navbarEmail" type="text" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <input id="navbarPass" type="text" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'" class="form-control">
-                        </div>
-                        <button type="submit" class="btn btn-success">Sign in</button>
-                    </form>
-                </div><!--/.navbar-collapse -->
+
             </div>
         </nav>
 
@@ -147,14 +132,32 @@
 
         <footer class="footer">
             <div class="container">
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
+                <div class="row text-center">
+                    <h3>Fale Conosco</h3>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <h4>Em breve, novidades!</h4>
+                    </div>
+
+                    <div id="retorno-envio" class="col-xs-12 col-sm-6 col-md-6">
+
+                        <g:if test="${((mensagemEnvio != "") && (mensagemEnvio != null))}">
+
+                            <div
+                                <g:if test="${sucessoEnvio}">class="alert alert-success"</g:if>
+                                <g:else>class="alert alert-danger"</g:else>
+                                role="alert">
+                                ${mensagemEnvio}
+                            </div>
+
+                        </g:if>
+
+                        <g:render template="/mail/formulario" />
+                    </div>
+                </div>
+
+
                 <div class="row">
                     <div class="separador"></div>
                 </div>
@@ -163,11 +166,11 @@
                     <div class="span12 social-nets-wrapper" data-motopress-type="static" data-motopress-static-file="static/static-social-networks.php">
                         <ul class="social">
                             <li>
-                                <a href="#" title="facebook">
+                                <a target="_blank" href="https://www.facebook.com/festadaliloca" title="facebook">
                                     <img src="${resource(dir: 'images/social', file: 'facebook.png')}" alt="facebook">
                                 </a>
                             </li>
-                            <li>
+                            <!--li>
                                 <a href="#" title="twitter">
                                     <img src="${resource(dir: 'images/social', file: 'twitter.png')}" alt="twitter">
                                 </a>
@@ -181,7 +184,7 @@
                                 <a href="#" title="youtube">
                                     <img src="${resource(dir: 'images/social', file: 'youtube.png')}" alt="youtube">
                                 </a>
-                            </li>
+                            </li-->
                         </ul>
                     </div>
                 </div>
@@ -189,7 +192,7 @@
                 <div class="row text-center">
                     <div class="span12" data-motopress-type="static" data-motopress-static-file="static/static-footer-text.php">
                         <div id="footer-text" class="footer-text">
-                                <a href="${link(controller: "home", action: "index")}" title="Liloca Festas - Decoração de festa infatil" class="site-name">Liloca Festas</a> © 2015 Todos direitos reservados <i>|</i> <a href="" title="Política de Privacidade">Política de Privacidade</a>
+                                <a href="${resource(controller: "home", action: "index")}" title="Liloca Festas - Decoração de festa infatil" class="site-name">Liloca Festas</a> © 2015 Todos direitos reservados <!--i>|</i> <a href="" title="Política de Privacidade">Política de Privacidade</a-->
                         </div> </div>
                 </div>
 

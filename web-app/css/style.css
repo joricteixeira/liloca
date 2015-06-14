@@ -99,6 +99,11 @@ h3 {
     font-family: 'Rum Raisin', sans-serif;
 }
 
+h4 {
+    font-size: 18px;
+    font-family: 'Rum Raisin', sans-serif;
+}
+
 h3 a:link, a:visited {
     text-decoration: none;
     color: #333;
@@ -111,3 +116,19 @@ h3 a:hover, a:active {
     transition: 0.45s;
 }
 
+.thumbnail p {
+    margin: 0;
+    line-height: 25px;
+    font-family: 'Rum Raisin', sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #f47971;
+}
+
+h5 b{
+    margin: 10px;
+}
+
+.footer form input, .footer form textarea{
+    margin-bottom: 10px;
+}
