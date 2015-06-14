@@ -123,10 +123,10 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <form class="navbar-form navbar-right">
                         <div class="form-group">
-                            <input id="navbarEmail" type="text" placeholder="Email" class="form-control">
+                            <input id="navbarEmail" type="text" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" class="form-control">
                         </div>
                         <div class="form-group">
-                            <input id="navbarPass" type="text" placeholder="Password" class="form-control">
+                            <input id="navbarPass" type="text" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'" class="form-control">
                         </div>
                         <button type="submit" class="btn btn-success">Sign in</button>
                     </form>
