@@ -9,7 +9,7 @@ class MailController {
         def sucesso = false
         def mensagemEnvio
 
-        if(emailService.enviarEmail(mailFormCommand)){
+        if(emailService.registraEmail(mailFormCommand)){
             sucesso = true
             mensagemEnvio = "Mensagem enviada com sucesso!"
         }else{

@@ -11,6 +11,8 @@ class HomeController {
             temas.clear();
         }
 
-        render(view: '/home/home', model: [temasDestaque: temas])
+        def fotos = Foto.findAll()
+
+        render(view: '/home/home', model: [temasDestaque: temas, fotos: fotos])
     }
 }

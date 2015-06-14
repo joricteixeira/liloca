@@ -20,6 +20,14 @@ class Tema {
     }
 
     def Foto getFotoCapa() {
-        decoracoes.getAt(0).fotos.getAt(0)
+        Foto.findByDecoracaoInList(this.decoracoes)
+    }
+
+    def List<Foto> getFotos(){
+        Foto.findAllByDecoracaoInList(this.decoracoes)
+    }
+
+    def String getNomeMinificado(){
+        this.nome.replace(" ","").replaceAll("[^\\p{ASCII}]", "")
     }
 }

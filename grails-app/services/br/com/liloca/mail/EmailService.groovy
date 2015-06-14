@@ -1,5 +1,6 @@
 package br.com.liloca.mail
 
+import br.com.liloca.MensagemContato
 import grails.transaction.Transactional
 import java.util.Properties
 import javax.mail.*
@@ -10,6 +11,7 @@ class EmailService {
 
     grails.plugin.mail.MailService mailG = new grails.plugin.mail.MailService()
 
+    @Deprecated
     boolean enviarEmail(MailFormCommand mailFormCommand) {
 
         print "iniciando envio"
@@ -43,6 +45,22 @@ class EmailService {
         }catch (Exception e){
             print e.cause
 
+            return false
+        }
+    }
+
+    boolean registraEmail(MailFormCommand mailFormCommand){
+        try {
+            def mensagem = new MensagemContato()
+            mensagem.nome = mailFormCommand.nome
+            mensagem.telefone = mailFormCommand.telefone
+            mensagem.email = mailFormCommand.email
+            mensagem.mensagem = mailFormCommand.mensagem
+
+            mensagem.save(failOnError: true)
+
+            return true
+        }catch (Exception e){
             return false
         }
     }

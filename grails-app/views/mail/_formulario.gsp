@@ -8,23 +8,22 @@
 </g:if>
 
 <g:formRemote name="formContato" url="[controller:'mail', action:'enviarEmail']" update="retorno-envio">
-
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6">
-            <input type="text" name="nome" class="form-control" placeholder="Nome:" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nome:'">
+            <input type="text" name="nome" class="form-control" placeholder="Nome:">
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6">
-            <input type="text" name="telefone" class="form-control" placeholder="Telefone:" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Telefone:'">
+            <input type="text" name="telefone" class="form-control" placeholder="Telefone:">
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
-            <input type="text" name="email" class="form-control" placeholder="E-mail:" onfocus="this.placeholder = ''" onblur="this.placeholder = 'E-mail:'">
+            <input type="text" name="email" class="form-control" placeholder="E-mail:">
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
-            <textarea name="mensagem" class="form-control" placeholder="Mensagem:" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mensagem:'"></textarea>
+            <textarea name="mensagem" class="form-control" placeholder="Mensagem:"></textarea>
         </div>
     </div>
 
