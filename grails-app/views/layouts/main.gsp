@@ -103,7 +103,7 @@
 
 		<g:layoutHead/>
 
-		<g:javascript library="application"/>		
+		<g:javascript library="application"/>
 		<r:layoutResources />
 	</head>
 	<body>
@@ -192,7 +192,7 @@
                 <div class="row text-center">
                     <div class="span12" data-motopress-type="static" data-motopress-static-file="static/static-footer-text.php">
                         <div id="footer-text" class="footer-text">
-                                <a href="${resource(controller: "home", action: "index")}" title="Liloca Festas - Decoração de festa infatil" class="site-name">Liloca Festas</a> © 2015 Todos direitos reservados <!--i>|</i> <a href="" title="Política de Privacidade">Política de Privacidade</a-->
+                                <a href="${resource(controller: "home", action: "index")}" title="Liloca Festas - Decoração de Festa infantil" class="site-name">Liloca Festas</a> © 2015 Todos direitos reservados <!--i>|</i> <a href="" title="Política de Privacidade">Política de Privacidade</a-->
                         </div> </div>
                 </div>
 
