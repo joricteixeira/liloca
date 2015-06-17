@@ -132,16 +132,19 @@
 
         <footer class="footer">
             <div class="container">
-                <div class="row text-center">
-                    <h3>Fale Conosco</h3>
-                </div>
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-6">
-                        <h4>Em breve, novidades!</h4>
+                    <div class="col-xs-12 col-sm-6 col-md-6 text-center">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <h2>Em breve, novidades!</h2>
                     </div>
 
                     <div id="retorno-envio" class="col-xs-12 col-sm-6 col-md-6">
-
+                        <div class="row text-center">
+                            <h3>Fale Conosco</h3>
+                        </div>
                         <g:if test="${((mensagemEnvio != "") && (mensagemEnvio != null))}">
 
                             <div
@@ -192,7 +195,7 @@
                 <div class="row text-center">
                     <div class="span12" data-motopress-type="static" data-motopress-static-file="static/static-footer-text.php">
                         <div id="footer-text" class="footer-text">
-                                <a href="${resource(controller: "home", action: "index")}" title="Liloca Festas - Decoração de Festa infantil" class="site-name">Liloca Festas</a> © 2015 Todos direitos reservados <!--i>|</i> <a href="" title="Política de Privacidade">Política de Privacidade</a-->
+                                <a href="${resource(controller: "home", action: "index")}" title="Liloca Festas - Decoração de Festa Infantil" class="site-name">Liloca Festas</a> © 2015 Todos direitos reservados <!--i>|</i> <a href="" title="Política de Privacidade">Política de Privacidade</a-->
                         </div> </div>
                 </div>
 
