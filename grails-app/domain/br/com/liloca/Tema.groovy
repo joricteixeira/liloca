@@ -20,7 +20,7 @@ class Tema {
     }
 
     def Foto getFotoCapa() {
-        Foto.findByDecoracaoInList(this.decoracoes)
+        Foto.findByDecoracaoInListAndFotosCapa(this.decoracoes, true)
     }
 
     def List<Foto> getFotos(){

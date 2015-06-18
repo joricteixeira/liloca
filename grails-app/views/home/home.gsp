@@ -18,6 +18,7 @@
             <div class="row">
                 <g:each in="${temasDestaque}" var="tema">
                     <div class="col-xs-12 col-sm-4 col-md-4">
+                    <g:if test="${tema.fotoCapa != null}">
                         <li>
                             <div class="featured-thumbnail thumbnail">
                                 <figure class="thumbnail">
@@ -32,6 +33,7 @@
                                 </h3>
                             </div>
                         </li>
+                    </g:if>
                     </div>
                 </g:each>
             </div>

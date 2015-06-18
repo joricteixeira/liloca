@@ -4,7 +4,10 @@ class BuscaController {
 
     def index() {
 
-        render (view: '/busca/busca')
+        def temas = Tema.findAll()
+
+        render (view: '/busca/busca', model: [temas: temas])
+
     }
 
     def buscarTema(){
