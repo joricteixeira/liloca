@@ -11,6 +11,6 @@ class HomeController {
             temas.clear();
         }
 
-        render(view: '/home/home', model: [temasDestaque: temas])
+        render(view: '/home/home', model: [temas: temas])
     }
 }

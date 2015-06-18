@@ -46,7 +46,7 @@ body{
     box-shadow: 0px 0px 6px #888888;
 }
 
-li{
+.container .row li{
     padding: 4px;
     list-style: none;
     background: url('/images/shadow.png') no-repeat right bottom 3px;
@@ -104,13 +104,13 @@ h4 {
     font-family: 'Rum Raisin', sans-serif;
 }
 
-h3 a:link, a:visited {
+a:link, a:visited {
     text-decoration: none;
     color: #333;
     transition: 0.45s;
 }
 
-h3 a:hover, a:active {
+a:hover, a:active {
     text-decoration: none;
     color: #e56961;
     transition: 0.45s;
@@ -131,4 +131,21 @@ h5 b{
 
 .footer form input, .footer form textarea{
     margin-bottom: 10px;
+}
+
+#navbar{
+    margin-top: 15px;
+}
+
+span.glyphicon {
+    font-size: 22px;
+    position: relative;
+    top: 24px;
+    display: inline-block;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }

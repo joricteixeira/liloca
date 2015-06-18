@@ -1,4 +1,4 @@
-<g:each in="${temasDestaque}" var="tema">
+<g:each in="${temas}" var="tema">
 
 
     <script type="text/javascript">

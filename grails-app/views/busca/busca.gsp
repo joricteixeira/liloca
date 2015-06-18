@@ -23,21 +23,7 @@
             <g:each in="${temas}" var="tema">
                 <div class="col-xs-12 col-sm-4 col-md-4">
                     <g:if test="${tema.fotoCapa != null}">
-                        <li>
-                            <div class="featured-thumbnail thumbnail">
-                                <figure class="thumbnail">
-                                    <a href="#" rel="prettyPhoto${tema.nomeMinificado}" title="${tema.nome}">
-                                        <img src="${tema.fotoCapa.url}" alt="Lorem ipsum dolor.">
-                                    </a>
-                                </figure>
-
-                                <h3 class="text-center">
-                                    <a href="#">
-                                        ${tema.nome}
-                                    </a>
-                                </h3>
-                            </div>
-                        </li>
+                        <g:render template="/templates/fotos/temaCard" model="['tema': tema]"/>
                     </g:if>
                 </div>
             </g:each>

@@ -4,7 +4,7 @@ class Foto {
 
     String titulo
     String url
-    boolean fotosCapa
+    boolean isCapa
 
     static belongsTo = [decoracao: Decoracao]
 
@@ -19,6 +19,6 @@ class Foto {
         titulo column: 'TITULO'
         url column: 'URL'
         decoracao column: 'DECORACAO_ID'
-        fotosCapa column: 'FOTOCAPA'
+        isCapa column: 'CAPA'
     }
 }
