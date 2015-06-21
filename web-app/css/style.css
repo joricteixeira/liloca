@@ -34,6 +34,34 @@ body{
     background-color: #ffffff;
 }
 
+.thumbnail p {
+    margin: 0;
+    line-height: 25px;
+    font-family: 'Rum Raisin', sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #f47971;
+}
+
+.thumbnailContacts{
+    display: block;
+    margin: 10px;
+    line-height: 1.42857143;
+    height: 115px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.thumbnailContacts p {
+    margin:0;
+    line-height: 25px;
+    font-family: 'Rum Raisin', sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #f47971;
+}
+
 .featured-thumbnail{
     border-radius: 16px;
     padding: 15px;
@@ -132,15 +160,6 @@ a:hover, a:active {
     text-decoration: none;
     color: #e56961;
     transition: 0.45s;
-}
-
-.thumbnail p {
-    margin: 0;
-    line-height: 25px;
-    font-family: 'Rum Raisin', sans-serif;
-    font-size: 22px;
-    font-weight: 400;
-    color: #f47971;
 }
 
 h5 b{

@@ -29,7 +29,7 @@
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-3 text-center">
-                <div class="thumbnail">
+                <div class="thumbnailContacts">
                     <h5>
                         <img src="${resource(dir: 'images', file: 'icon_3.png')}">
                     </h5>
@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-3 text-center">
-                <div class="thumbnail">
+                <div class="thumbnailContacts">
                     <h5>
                         <img src="${resource(dir: 'images', file: 'icon_1.png')}">
                     </h5>
@@ -47,7 +47,7 @@
                 </div>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-3 text-center">
-                <div class="thumbnail">
+                <div class="thumbnailContacts">
                     <h5>
                         <img src="${resource(dir: 'images', file: 'icon_2.png')}">
                     </h5>
@@ -56,7 +56,7 @@
                 </div>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-3 text-center">
-                <div class="thumbnail">
+                <div class="thumbnailContacts">
                     <h5>
                         <a target="_blank" href="http://facebook.com/festadaliloca"><img src="${resource(dir: 'images', file: 'icon_4.png')}"></a>
                     </h5>
