@@ -7,7 +7,7 @@
 
 <div class="container">
     <div class="well well-lg">
-        <g:formRemote name="buscaTema" url="[controller: 'busca', action: 'buscarTema']">
+        <g:formRemote name="buscaTema" on404="alert('not found!')" url="[controller: 'busca', action: 'buscarTema']">
             <g:textField name="nome" class="form-control"/>
         </g:formRemote>
     </div>
