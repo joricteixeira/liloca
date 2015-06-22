@@ -11,7 +11,7 @@ class BuscaController {
 
     def buscarTema(){
 
-        def temas = Tema.findByNome(params.nome)
-        render (view: '/busca/busca', model: [temas: temas])
+        def tema = Tema.findAllByNome(params.nome)
+        render (template: '../templates/fotos/temaCard', model: [tema: tema])
     }
 }
