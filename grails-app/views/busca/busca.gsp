@@ -7,9 +7,7 @@
 
 <div class="container">
     <div class="well well-lg">
-        <g:formRemote name="buscaTema" url="[controller: 'busca', action: 'buscarTema']" update="updateMe">
-            <g:textField name="nome" class="form-control"/>
-        </g:formRemote>
+        <g:remoteField name="buscaTema" controller="busca" action="buscarTema" paramName="nome" update="updateMe" class="form-control"></g:remoteField>
     </div>
 
     <g:if test="${!temas.isEmpty()}">
