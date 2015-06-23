@@ -2,16 +2,27 @@ package br.com.liloca
 
 class BuscaController {
 
+    def temas
+
     def index() {
 
-        def temas = Tema.findAll()
-
-        render (view: '/busca/busca', model: [temas: temas])
+        temas = Tema.findAll()
+        render(view: '/busca/busca', model: [temas: temas])
     }
 
-    def buscarTema(){
+    def buscarTema() {
 
-        def tema = Tema.findAllByNome(params.nome)
-        render (template: '../templates/fotos/temaCard', model: [tema: tema])
+        if (params.nome != "") {
+
+            temas = Tema.findAllByNomeLike(params.nome+"%")
+
+            render(template: '../templates/fotos/searchResult', model: [temas: temas])
+        }
+        else {
+
+            temas = Tema.findAll()
+            render (template: '../templates/fotos/searchResult', model: [temas: temas])
+        }
     }
 }
+

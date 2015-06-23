@@ -14,13 +14,7 @@
             </div>
 
             <div class="row">
-                <g:each in="${temas}" var="tema">
-                    <div class="col-xs-12 col-sm-4 col-md-4">
-                    <g:if test="${tema.fotoCapa != null}">
-                        <g:render template="/templates/fotos/temaCard" model="['tema': tema]"/>
-                    </g:if>
-                    </div>
-                </g:each>
+                <g:render template="/templates/fotos/temasCard" model="['tema': temas]"/>
             </div>
         </g:if>
         <div class="separador"></div>
