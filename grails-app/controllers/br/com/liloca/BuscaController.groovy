@@ -16,12 +16,12 @@ class BuscaController {
 
             temas = Tema.findAllByNomeLike(params.nome+"%")
 
-            render(template: '../templates/fotos/searchResult', model: [temas: temas])
+            render(view: '../busca/searchResult', model: [temas: temas])
         }
         else {
 
             temas = Tema.findAll()
-            render (template: '../templates/fotos/searchResult', model: [temas: temas])
+            render (view: '../busca/searchResult', model: [temas: temas])
         }
     }
 }
