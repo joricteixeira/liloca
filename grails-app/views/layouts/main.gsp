@@ -63,6 +63,7 @@
         });
     </script>
 
+    %{--
     <script>
         $(document).ready(function(){
             $window = $(window);
@@ -100,6 +101,7 @@
 
         });
     </script>
+    --}%
 
 		<g:layoutHead/>
 
@@ -118,8 +120,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">
-                        <img id="logo" src="${resource(dir: 'images', file: 'logo.png')}">
+                    <a class="navbar-brand" href="${createLink(controller: 'home', action: 'index')}">
+                        <img id="logo" src="${resource(dir: 'images', file: 'logo.png')}" width="110" height="110">
                     </a>
 
                 </div>
@@ -127,10 +129,10 @@
                 <div id="navbar" class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li>
-                            <g:link controller="home" action="index">Home</g:link>
+                            <g:link controller="home" action="index" class="linkCabecalho">Home</g:link>
                         </li>
                         <li>
-                            <g:link controller="busca" action="index">Todos os Temas</g:link>
+                            <g:link controller="busca" action="index" class="linkCabecalho">Todos os Temas</g:link>
                         </li>
                     </ul>
                 </div>
@@ -151,19 +153,19 @@
 
         <footer class="footer">
             <div class="container">
+                <div class="row text-center">
+                    <div class="col-xs-12 col-sm-6 col-md-6 text-center"></div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 text-center">
+                        <h3>Fale Conosco</h3>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6 text-center">
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+                        <img src="${resource(dir: 'images', file: 'logo.png')}">
                         <h2>Em breve, novidades!</h2>
                     </div>
 
                     <div id="retorno-envio" class="col-xs-12 col-sm-6 col-md-6">
-                        <div class="row text-center">
-                            <h3>Fale Conosco</h3>
-                        </div>
                         <g:if test="${((mensagemEnvio != "") && (mensagemEnvio != null))}">
 
                             <div

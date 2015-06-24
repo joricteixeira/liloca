@@ -3,9 +3,9 @@
         <g:if test="${tema.fotoCapa != null}">
             <div class="featured-thumbnail thumbnail">
                 <figure class="thumbnail">
-                    <g:link controller="detalhe" action="index" params="[id: tema.id]">
+                    <a href="#" rel="prettyPhoto${tema.nomeMinificado}" title="${tema.nome}">
                         <img src="${tema.fotoCapa.url}" alt="Lorem ipsum dolor.">
-                    </g:link>
+                    </a>
                 </figure>
 
                 <div class="row">
@@ -17,10 +17,10 @@
                         </h3>
                     </div>
 
-                    <div class="col-xs-4 col-sm-4 col-md-4">
-                        <a href="#" rel="prettyPhoto${tema.nomeMinificado}" title="${tema.nome}">
-                            <span class="glyphicon glyphicon-plus">fotos</span>
-                        </a>
+                    <div class="col-xs-4 col-sm-4 col-md-4 text-left">
+                        <g:link controller="detalhe" action="index" class="saibamais" params="[id: tema.id]">
+                            saiba mais
+                        </g:link>
                     </div>
                 </div>
             </div>

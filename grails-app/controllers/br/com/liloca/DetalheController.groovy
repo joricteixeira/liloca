@@ -9,12 +9,6 @@ class DetalheController {
 
         def tema = Tema.findById(id)
 
-        def temasRelacionados = Tema.findAll()
-
-        if (temasRelacionados.size() < 3) {
-            temasRelacionados.clear();
-        }
-
-        render (view: '/detalhe/detalhe', model: [tema: tema, temas: temasRelacionados])
+        render (view: '/detalhe/detalhe', model: [tema: tema])
     }
 }

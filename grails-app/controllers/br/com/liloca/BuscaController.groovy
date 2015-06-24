@@ -16,9 +16,7 @@ class BuscaController {
 
         def nomeProcurado = GrailsStringUtils.trimLeadingWhitespace(params.nome)
 
-        if (nomeProcurado) {
-
-            temas = Tema.findAllByNomeIlike("%"+nomeProcurado+"%")
+        temas = Tema.findAllByNomeIlike("%"+nomeProcurado+"%")
 
             render(view: '../busca/searchResult', model: [temas: temas])
         }

@@ -3,14 +3,32 @@
 </head>
 
 <body>
-<div style="min-height: 250px"></div>
+<div style="min-height: 150px"></div>
 
 <div class="container">
     <div class="well well-lg">
-        <g:remoteField name="buscaTema" controller="busca" action="buscarTema" paramName="nome" update="updateMe" class="form-control"></g:remoteField>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <g:remoteField name="buscaTema"
+                               controller="busca" action="buscarTema"
+                               paramName="nome"
+                               update="updateMe"
+                               class="form-control"
+                               placeholder="Busque por um tema..."
+                               before="jQuery('#loadingGif').attr('style','display: block'); jQuery('#updateMe').html('')"
+                               onComplete="jQuery('#loadingGif').attr('style','display: none')"
+                />
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <select class="form-control">
+                    <option>Ordenar por: Nome</option>
+                </select>
+            </div>
+        </div>
     </div>
 
     <g:if test="${!temas.isEmpty()}">
+        <img src="${resource(dir: 'images', file: 'ajax_loader_blue_512.gif')}" style="display: none" id="loadingGif" width="100" height="100">
         <div class="row" id="updateMe">
             <div class="col-xs-12">
                 <h2 class="title-box_primary text-center text-uppercase">Temas Disponíveis!</h2>
