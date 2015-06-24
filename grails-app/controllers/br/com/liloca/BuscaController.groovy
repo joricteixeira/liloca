@@ -1,5 +1,7 @@
 package br.com.liloca
 
+import org.codehaus.groovy.grails.commons.GrailsStringUtils
+
 class BuscaController {
 
     def temas
@@ -12,9 +14,11 @@ class BuscaController {
 
     def buscarTema() {
 
-        if (params.nome != "") {
+        def nomeProcurado = GrailsStringUtils.trimLeadingWhitespace(params.nome)
 
-            temas = Tema.findAllByNomeLike(params.nome+"%")
+        if (nomeProcurado) {
+
+            temas = Tema.findAllByNomeIlike("%"+nomeProcurado+"%")
 
             render(view: '../busca/searchResult', model: [temas: temas])
         }
