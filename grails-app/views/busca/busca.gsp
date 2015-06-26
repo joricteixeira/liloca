@@ -20,16 +20,8 @@
                 />
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6">
-                <select class="form-control"
-                        onchange="${remoteFunction(
-                                controller: 'busca',
-                                action: 'ordenar',
-                                update: 'updateMe',
-                                params: '\'tipoOrdenacao=\' + this.value',
-                                before: "jQuery('#loadingGif').attr('style','display: block')",
-                                onComplete: "jQuery('#loadingGif').attr('style','display: none')")}">
-                    <option>Ordenar por: Nome [A - Z]</option>
-                    <option>Ordenar por: Nome [Z - A]</option>
+                <select class="form-control">
+                    <option>Ordenar por: Nome</option>
                 </select>
             </div>
         </div>

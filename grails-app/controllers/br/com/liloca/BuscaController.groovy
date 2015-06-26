@@ -26,19 +26,5 @@ class BuscaController {
             render(view: '../busca/searchResult', model: [temas: temas])
         }
     }
-
-    def ordenar() {
-
-        switch (params.tipoOrdenacao) {
-            case "Ordenar por: Nome [A - Z]":
-                temas = Tema.findAll("from Tema order by nome")
-                render(view: '../busca/searchResult', model: [temas: temas])
-                break
-            case "Ordenar por: Nome [Z - A]":
-                temas = Tema.findAll("from Tema order by nome desc")
-                render(view: '../busca/searchResult', model: [temas: temas])
-                break
-        }
-    }
 }
 
