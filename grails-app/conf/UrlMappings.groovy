@@ -1,15 +1,6 @@
 class UrlMappings {
 
 	static mappings = {
-
-
-        //TODO remover para go-live
-        "/$controller/$action?/$id?(.$format)?"{
-            constraints {
-                // apply constraints here
-            }
-        }
-
         //Site
         "/" (controller: "home", action: "index")
         "/tema" (controller: "busca", action:  "index")
@@ -18,6 +9,33 @@ class UrlMappings {
         //Admin
         "/admin" (controller: "dashBoard", action: "index")
 
+        "/admin/tema" (controller: "tema", action: "listar")
+        "/admin/tema/$id"{
+            controller = "tema"
+            action = "listar"
+            constraints {
+                id(matches:"\\d+")
+            }
+        }
+
+        "/admin/decoracao" (controller: "decoracao", action: "index")
+        "/admin/tema/$id/decoracao" (controller: "decoracao", action: "index")
+        "/admin/tema/decoracao/$id" (controller: "decoracao", action: "index")
+
+        "/admin/tema/decoracao/$id/propriedade" (controller: "propriedade", action: "index")
+        "/admin/tema/decoracao/propriedade/$id" (controller: "propriedade", action: "index")
+
+        "/admin/foto" (controller: "foto", action: "index")
+        "/admin/tema/decoracao/$id/foto" (controller: "foto", action: "index")
+        "/admin/tema/decoracao/foto/$id" (controller: "foto", action: "index")
+
         "500"(view:'/error')
+
+        //TODO remover para go-live
+        "/$controller/$action?/$id?(.$format)?"{
+            constraints {
+                // apply constraints here
+            }
+        }
 	}
 }

@@ -128,16 +128,3 @@ grails.plugin.springsecurity.authority.className = 'br.com.liloca.admin.Role'
 grails.plugin.springsecurity.rejectIfNoRule = false
 grails.plugin.springsecurity.fii.rejectPublicInvocations = false
 grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/admin'
-
-/*grails.plugin.springsecurity.controllerAnnotations.staticRules = [
-	'/':                ['permitAll'],
-	'/index':           ['permitAll'],
-	'/index.gsp':       ['permitAll'],
-	'/assets/**':       ['permitAll'],
-	'/** /js/**':        ['permitAll'],
-	'/** /css/**':       ['permitAll'],
-	'/** /images/**':    ['permitAll'],
-	'/** /favicon.ico':  ['permitAll']
-]
-*/
-
