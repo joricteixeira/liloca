@@ -58,8 +58,9 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li class="active"><a href="#">Dashboard <span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="${createLink(controller: 'dashBoard', action: 'index')}">Dashboard <span class="sr-only">(current)</span></a></li>
                 <li><a href="#">Mensagens Enviadas</a></li>
+                <li><a href="${createLink(controller: 'tema', action: 'listar')}">Listar Temas</a></li>
             </ul>
         </div>
 

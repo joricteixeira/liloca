@@ -65,3 +65,11 @@ h5 b{
     width: 15%;
     margin-top: 85px;
 }
+
+.page-header {
+    margin: 160px 0px 20px;
+}
+
+.col-md-offset-2 {
+    margin-left: 0;
+}
