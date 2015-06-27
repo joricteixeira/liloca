@@ -225,6 +225,7 @@ a.saibamais:link, a.saibamais:visited{
     text-decoration: none;
     color: #e56961;
     transition: 0.45s;
+    outline: none;
 }
 
 a.saibamais:hover, a.saibamais:active{
