@@ -21,7 +21,13 @@
             <g:if test="${tema.destaque}">class="info"</g:if>>
             <td>${tema.id}</td>
             <td>${tema.nome}</td>
-            <td class="text-center"><g:checkBox name="destaque" value="${tema.destaque}"></g:checkBox></td>
+            <td class="text-center">
+                <g:form name="destaque" url="[controller: 'tema', action: 'alterarDestaque']">
+                    <g:checkBox name="destaque" value="${tema.destaque}"></g:checkBox>
+                    <g:hiddenField name="nome" value="${tema.nome}"/>
+                    <g:actionSubmit class="btn btn-default" action="alterarDestaque" value="save"/>
+                </g:form>
+            </td>
             <td>
                 <a href="${createLink(uri: "/admin/tema/${tema.id}")}" class="btn btn-warning">Alterar</a>
                 <a href="${createLink(uri: "/admin/tema/${tema.id}")}" class="btn btn-danger">Excluir</a>

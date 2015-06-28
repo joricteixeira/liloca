@@ -6,8 +6,11 @@ import grails.plugin.springsecurity.annotation.Secured
 @Secured(['ROLE_ADMIN'])
 class TemaController {
 
+    def temas
+
     def listar() {
-        def temas = Tema.list()
+
+        temas  = Tema.list()
 
         render(view: '/tema/listar', model: [temas: temas])
     }
@@ -19,4 +22,19 @@ class TemaController {
     def preRemover(){}
 
     def remover(){}
+
+    def alterarDestaque(){
+
+        def tema = Tema.findByNome(params.nome)
+
+        if(params.destaque == null){
+            tema.destaque = false
+        } else{
+            tema.destaque = true
+        }
+        tema.save()
+
+        temas = Tema.list()
+        render(view: '/tema/listar', model: [temas: temas])
+    }
 }
