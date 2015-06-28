@@ -27,14 +27,13 @@ class TemaController {
 
         def tema = Tema.findByNome(params.nome)
 
-        if(params.destaque == null){
+        if(params.temaDestaque == null){
             tema.destaque = false
         } else{
             tema.destaque = true
         }
         tema.save()
 
-        temas = Tema.list()
-        render(view: '/tema/listar', model: [temas: temas])
+        redirect(action: "listar")
     }
 }

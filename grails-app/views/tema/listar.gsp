@@ -9,21 +9,21 @@
     Cadastrar Novo Tema
 </button>
 <br><br>
-<table class="table table-bordered table-striped">
+<table id="tableTemas" class="table table-bordered table-striped">
     <tr>
-        <td>#</td>
-        <td>Nome</td>
-        <td class="text-center">Destaque</td>
-        <td>Ações</td>
+        <th>#</th>
+        <th>Nome</th>
+        <th class="text-center">Destaque</th>
+        <th>Ações</th>
     </tr>
     <g:each in="${temas}" var="tema">
-        <tr
+        <tr id="linhaTemas"
             <g:if test="${tema.destaque}">class="info"</g:if>>
             <td>${tema.id}</td>
             <td>${tema.nome}</td>
-            <td class="text-center">
-                <g:form name="destaque" url="[controller: 'tema', action: 'alterarDestaque']">
-                    <g:checkBox name="destaque" value="${tema.destaque}"></g:checkBox>
+            <td id=colunaDestaque class="text-center">
+                <g:form id="formDestaque" name="formDestaque" onsubmit="return validarDestaques()" url="[controller: 'tema', action: 'alterarDestaque']">
+                    <g:checkBox id="checkboxDestaque" name="temaDestaque" onclick="this.formDestaque.submit()" checked="${tema.destaque}"></g:checkBox>
                     <g:hiddenField name="nome" value="${tema.nome}"/>
                     <g:actionSubmit class="btn btn-default" action="alterarDestaque" value="save"/>
                 </g:form>
@@ -35,4 +35,28 @@
         </tr>
     </g:each>
 </table>
+<script>
+    function validarDestaques() {
+
+        var qtdDestaque = 0
+        $('tr#linhaTemas').each(function () {
+
+            var checkbox = $(this)
+
+            checkbox = (checkbox.find($(":checked")))
+
+            if (checkbox.length > 0) {
+                qtdDestaque = qtdDestaque + 1
+            }
+        })
+
+        if (qtdDestaque != 3) {
+            alert('A quantidade de Temas Destaques são 3!')
+            return false
+        } else {
+            return true
+        }
+
+    }
+</script>
 </body>
