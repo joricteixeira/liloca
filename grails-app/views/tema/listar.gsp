@@ -5,9 +5,8 @@
 <body>
 
 <h1 class="page-header">Lista de Temas</h1>
-<button class="btn btn-success">
-    Cadastrar Novo Tema
-</button>
+<button class="btn btn-success">Cadastrar Novo Tema</button>
+<g:actionSubmit id="salvarDestaque" class="btn btn-default" action="alterarDestaque" onclick="formSubmit()" value="Salvar Temas Destaques"/>
 <br><br>
 <table id="tableTemas" class="table table-bordered table-striped">
     <tr>
@@ -16,29 +15,54 @@
         <th class="text-center">Destaque</th>
         <th>Ações</th>
     </tr>
-    <g:each in="${temas}" var="tema">
-        <tr id="linhaTemas"
-            <g:if test="${tema.destaque}">class="info"</g:if>>
-            <td>${tema.id}</td>
-            <td>${tema.nome}</td>
-            <td id=colunaDestaque class="text-center">
-                <g:form id="formDestaque" name="formDestaque" onsubmit="return validarDestaques()" url="[controller: 'tema', action: 'alterarDestaque']">
-                    <g:checkBox id="checkboxDestaque" name="temaDestaque" onclick="this.formDestaque.submit()" checked="${tema.destaque}"></g:checkBox>
-                    <g:hiddenField name="nome" value="${tema.nome}"/>
-                    <g:actionSubmit class="btn btn-default" action="alterarDestaque" value="save"/>
-                </g:form>
-            </td>
-            <td>
-                <a href="${createLink(uri: "/admin/tema/${tema.id}")}" class="btn btn-warning">Alterar</a>
-                <a href="${createLink(uri: "/admin/tema/${tema.id}")}" class="btn btn-danger">Excluir</a>
-            </td>
-        </tr>
-    </g:each>
+    <g:form id="formDestaque" name="formDestaque" url="[controller: 'tema', action: 'alterarDestaque']">
+        <g:each in="${temas}" var="tema">
+            <tr id="linhaTemas"
+                <g:if test="${tema.destaque}">class="info"</g:if>>
+                <td>${tema.id}</td>
+                <td>${tema.nome}</td>
+                <td id=colunaDestaque class="text-center">
+                    <g:checkBox id="checkboxDestaque" name="temaDestaque" checked="${tema.destaque}" value="${tema.nome}"/>
+                    <g:hiddenField id="temanome" name="nome" value="${tema.nome}"/>
+                </td>
+                <td>
+                    <a href="${createLink(uri: "/admin/tema/${tema.id}")}" class="btn btn-warning">Alterar</a>
+                    <a href="${createLink(uri: "/admin/tema/${tema.id}")}" class="btn btn-danger">Excluir</a>
+                </td>
+            </tr>
+        </g:each>
+    </g:form>
 </table>
 <script>
-    function validarDestaques() {
 
-        var qtdDestaque = 0
+    $("input:checkbox").click(function () {
+
+                var checkboxRow = $(this).parent().parent()
+
+                var qtdTemasDestaque = $("input:checkbox:checked").length
+
+                if (qtdTemasDestaque > 3){
+                    checkboxRow.toggleClass()
+                    alert("Quantidade de Temas Destaques não podem ser maior que 3!")
+                    return false
+                } else if (qtdTemasDestaque < 3) {
+                    checkboxRow.toggleClass("info")
+                } else {
+                    checkboxRow.toggleClass("info")
+                    formSubmit()
+                }
+                console.log($("input:checkbox"))
+                console.log($(this).val())
+                console.log($("input:checkbox:checked").val())
+                console.log($("input:checkbox:checked"))
+
+            }
+    )
+
+
+    function formSubmit() {
+
+       /*var qtdDestaque = 0
         $('tr#linhaTemas').each(function () {
 
             var checkbox = $(this)
@@ -51,12 +75,13 @@
         })
 
         if (qtdDestaque != 3) {
-            alert('A quantidade de Temas Destaques são 3!')
+            alert('A quantidade de Temas Destaques deve ser 3!')
             return false
         } else {
-            return true
-        }
-
+            //$("#formDestaque").submit()
+            alert("Salvo com Sucesso!")
+        }*/
+        alert("Salvo com Sucesso!")
     }
 </script>
 </body>
