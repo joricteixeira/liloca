@@ -18,7 +18,7 @@
                 <td>${tema.id}</td>
                 <td>${tema.nome}</td>
                 <td class="text-center">
-                    <g:checkBox name="temaDestaque" checked="${tema.destaque}" value="${tema.nome}"/>
+                    <g:checkBox name="temaDestaque" checked="${tema.destaque}" value="${tema.id}"/>
                 </td>
                 <td>
                     <a href="${createLink(uri: "/admin/tema/${tema.id}")}" class="btn btn-warning">Alterar</a>

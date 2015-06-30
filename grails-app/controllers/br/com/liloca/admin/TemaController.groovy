@@ -24,9 +24,12 @@ class TemaController {
 
     def alterarDestaque() {
 
-        def temasDestaques = params.temaDestaque
         def temas = Tema.list()
         def tema = null
+        def id = null
+        def idsTemasDestaques = []
+
+        idsTemasDestaques.addAll(params.temaDestaque)
 
         temas.each {
             tema = it
@@ -34,8 +37,9 @@ class TemaController {
             tema.save()
         }
 
-        temasDestaques.each {
-            tema = Tema.findByNome(it)
+        idsTemasDestaques.each {
+            id = Long.parseLong(it)
+            tema = Tema.findById(id)
             tema.destaque = true
             tema.save()
         }
