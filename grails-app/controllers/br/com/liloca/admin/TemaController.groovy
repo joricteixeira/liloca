@@ -6,34 +6,41 @@ import grails.plugin.springsecurity.annotation.Secured
 @Secured(['ROLE_ADMIN'])
 class TemaController {
 
-    def temas
 
     def listar() {
 
-        temas  = Tema.list()
+        def temas = Tema.list()
 
         render(view: '/tema/listar', model: [temas: temas])
     }
 
-    def detalhar(){}
+    def detalhar() {}
 
-    def atualizar(){}
+    def atualizar() {}
 
-    def preRemover(){}
+    def preRemover() {}
 
-    def remover(){}
+    def remover() {}
 
-    def alterarDestaque(){
+    def alterarDestaque() {
 
-        def tema = Tema.findByNome(params.nome)
+        def temasDestaques = params.temaDestaque
+        def temas = Tema.list()
+        def tema = null
 
-        if(params.temaDestaque == null){
+        temas.each {
+            tema = it
             tema.destaque = false
-        } else{
-            tema.destaque = true
+            tema.save()
         }
-        tema.save()
+
+        temasDestaques.each {
+            tema = Tema.findByNome(it)
+            tema.destaque = true
+            tema.save()
+        }
 
         redirect(action: "listar")
+
     }
 }
