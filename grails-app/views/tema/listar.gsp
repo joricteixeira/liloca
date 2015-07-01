@@ -1,15 +1,18 @@
 <head>
     <meta name="layout" content="mainAdmin"/>
+    <script type="text/javascript" src="${resource(dir: 'js', file: 'alertify.min.js')}"></script>
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'alertify.core.css')}" type="text/css">
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'alertify.default.css')}" type="text/css">
 </head>
 
 <body>
 <h1 class="page-header">Lista de Temas</h1>
 <table class="table table-bordered table-striped">
     <tr>
-        <th>#</th>
-        <th>Nome</th>
-        <th class="text-center">Destaque</th>
-        <th>Ações</th>
+        <td>#</td>
+        <td>Nome</td>
+        <td class="text-center">Destaque</td>
+        <td>Ações</td>
     </tr>
     <g:form name="formDestaque" onsubmit=" return validarTemasDestaques()" url="[controller: 'tema', action: 'alterarDestaque']">
         <g:each in="${temas}" var="tema">
@@ -21,8 +24,8 @@
                     <g:checkBox name="temaDestaque" checked="${tema.destaque}" value="${tema.id}"/>
                 </td>
                 <td>
-                    <a href="${createLink(uri: "/admin/tema/${tema.id}")}" class="btn btn-warning">Alterar</a>
-                    <a href="${createLink(uri: "/admin/tema/${tema.id}")}" class="btn btn-danger">Excluir</a>
+                    <g:link controller="tema" action="detalhar" params="[id: tema.id]" class="btn btn-warning">Alterar Tema</g:link>
+                    <g:link controller="tema" action="remover" params="[id: tema.id]" onclick="return deleteConfirm('${tema.nome}')" class="btn btn-danger">Excluir Tema</g:link>
                 </td>
             </tr>
         </g:each>
@@ -40,7 +43,8 @@
 
                 if (qtdTemasDestaque > 3) {
                     checkboxRow.toggleClass()
-                    alert("Quantidade de Temas Destaques não podem ser maior que 3!")
+                    reset()
+                    alertify.alert("Quantidade de Temas Destaques não podem ser maior que 3!")
                     return false
                 } else if (qtdTemasDestaque < 3) {
                     checkboxRow.toggleClass("info")
@@ -50,15 +54,42 @@
             }
     )
 
-    function validarTemasDestaques(){
+    function validarTemasDestaques() {
         var qtdTemasDestaque = $("input:checkbox:checked").length
 
         if (qtdTemasDestaque < 3) {
-            alert("Não foi possivel salvar: É preciso escolher 3 temas destaques!")
+            reset()
+            alertify.alert("Não foi possivel salvar: É preciso escolher 3 temas destaques!")
             return false
         } else {
             return true
         }
+    }
+
+    function deleteConfirm(nome) {
+        alertify.set({ labels: { ok: "Tenho!", cancel: "Não tenho!" } });
+        alertify.set({ buttonFocus: "cancel" });
+        alertify.confirm("Tem certeza que deseja excluir o tema "+nome+"?", function (e) {
+            if (e) {
+                alertify.success("Você excluiu o tema com sucesso!");
+                return true
+            } else {
+                return false
+            }
+        });
+        return false;
+    }
+
+    function reset () {
+        alertify.set({
+            labels : {
+                ok     : "OK",
+                cancel : "Cancel"
+            },
+            delay : 5000,
+            buttonReverse : false,
+            buttonFocus   : "ok"
+        });
     }
 </script>
 </body>

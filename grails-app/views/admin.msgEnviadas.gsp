@@ -4,7 +4,7 @@
 
 <body>
 
-<h1 class="page-header">Mensagens Não Lidas</h1>
+<h1 class="page-header">Mensagens Enviadas</h1>
 <table class="table table-bordered table-striped">
     <tr>
         <td>#</td>
@@ -15,7 +15,7 @@
         <tr>
             <td>${tema.id}</td>
             <td>${tema.nome}</td>
-            <td><button class="btn btn-warning">Marcar como Lida</button> <button class="btn btn-danger">Apagar Mensagem</button></td>
+            <td><button class="btn btn-warning">Enviar</button> <button class="btn btn-danger">Limpar</button></td>
         </tr>
     </g:each>
 </table>

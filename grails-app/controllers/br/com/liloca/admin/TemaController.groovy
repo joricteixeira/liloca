@@ -14,13 +14,23 @@ class TemaController {
         render(view: '/tema/listar', model: [temas: temas])
     }
 
-    def detalhar() {}
+    def detalhar() {
+
+        def id = Integer.parseInt(params.id)
+
+        def tema = Tema.findById(id)
+
+        render(view: '/tema/alterar', model: [tema: tema])
+    }
 
     def atualizar() {}
 
     def preRemover() {}
 
-    def remover() {}
+    def remover() {
+
+        redirect(action: "listar")
+    }
 
     def alterarDestaque() {
 

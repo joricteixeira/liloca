@@ -8,6 +8,7 @@ class UrlMappings {
 
         //Admin
         "/admin" (controller: "dashBoard", action: "index")
+        "/admin/enviadas" (controller: "dashBoard", action: "mensagensEnviadas")
 
         "/admin/tema" (controller: "tema", action: "listar")
         "/admin/tema/$id"{
