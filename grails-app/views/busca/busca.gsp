@@ -34,9 +34,7 @@
                                         before:"jQuery('#loadingGif').attr('style','display: block')",
                                         onComplete:"jQuery('#loadingGif').attr('style','display: none')"
                             )}">
-                        <option>Ordenar por...</option>
-                        <option>Ordenar por: Nome [A - Z]</option>
-                        <option>Ordenar por: Nome [Z - A]</option>
+                        <option>Ordenar por: Nome</option>
                     </select>
                 </div>
             </g:formRemote>

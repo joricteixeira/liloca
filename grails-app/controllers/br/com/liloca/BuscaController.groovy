@@ -17,39 +17,21 @@ class BuscaController {
 
         def nomeProcurado = GrailsStringUtils.trimLeadingWhitespace(params.nome)
 
-        if (nomeProcurado) {
+        StringBuilder query = new StringBuilder()
+        Map parametros = new HashMap()
 
-            switch (params.tipoOrdenacao) {
-                case "Ordenar por...":
-                    temas = Tema.findAllByNomeIlike("%" + nomeProcurado + "%")
-                    render(view: '../busca/searchResult', model: [temas: temas])
-                    break
-                case "Ordenar por: Nome [A - Z]":
-                    temas = Tema.findAllByNomeIlike("%" + nomeProcurado + "%", [sort: "nome"])
-                    render(view: '../busca/searchResult', model: [temas: temas])
-                    break
-                case "Ordenar por: Nome [Z - A]":
-                    temas = Tema.findAllByNomeIlike("%" + nomeProcurado + "%", [sort: "nome", order:"desc"])
-                    render(view: '../busca/searchResult', model: [temas: temas])
-                    break
-            }
-        } else {
+        query.append("FROM Tema T WHERE 1 = 1 ")
 
-            switch (params.tipoOrdenacao) {
-                case "Ordenar por...":
-                    temas = Tema.findAll()
-                    render(view: '../busca/searchResult', model: [temas: temas])
-                    break
-                case "Ordenar por: Nome [A - Z]":
-                    temas = Tema.findAll("from Tema order by nome")
-                    render(view: '../busca/searchResult', model: [temas: temas])
-                    break
-                case "Ordenar por: Nome [Z - A]":
-                    temas = Tema.findAll("from Tema order by nome desc")
-                    render(view: '../busca/searchResult', model: [temas: temas])
-                    break
-            }
+        if(nomeProcurado && nomeProcurado != ""){
+            query.append("AND T.nome like :pNome")
+            parametros.put("pNome","%${nomeProcurado}%")
         }
+
+        query.append(" ORDER BY T.nome")
+
+        def temas = Tema.executeQuery(query.toString() ,parametros)
+
+        render(view: '../busca/searchResult', model: [temas: temas])
     }
 }
 

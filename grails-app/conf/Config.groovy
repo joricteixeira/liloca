@@ -91,10 +91,12 @@ grails.hibernate.osiv.readonly = false
 
 environments {
     development {
+        grails.app.context = "/"
         grails.logging.jul.usebridge = true
         grails.serverURL = "http://localhost:9002/liloca"
     }
     production {
+        grails.app.context = "/"
         grails.logging.jul.usebridge = false
         grails.serverURL = "http://www.liloca.com.br/liloca"
     }

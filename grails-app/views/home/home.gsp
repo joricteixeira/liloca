@@ -2,7 +2,8 @@
     <meta name="layout" content="main" />
 </head>
 <body>
-    <div class="parallax-window" data-parallax="scroll" data-image-src="/liloca/static/images/IMG_1745_2.jpg"></div>
+    <div class="parallax-window" data-parallax="scroll" data-image-src="${resource(dir: 'images', file: 'IMG_1745_2.jpg')}">
+    </div>
 
     <div class="container">
 

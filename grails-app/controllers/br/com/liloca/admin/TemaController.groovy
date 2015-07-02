@@ -23,7 +23,15 @@ class TemaController {
         render(view: '/tema/alterar', model: [tema: tema])
     }
 
-    def atualizar() {}
+    def atualizar() {
+
+        def id = Integer.parseInt(params.id)
+        def tema = Tema.findById(id)
+        tema.nome = params.nome
+        def salvo = tema.save()
+
+        render(view: '/tema/alterar', model: [tema: tema, salvo: salvo, processado: true])
+    }
 
     def preRemover() {}
 

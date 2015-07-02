@@ -1,75 +1,105 @@
-body{
-    background-color: #ffffdd;
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
 }
 
-.navbar{
-    min-height: 80px;
-    background-color: #ffaaaa;
+
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
 }
 
-.navbar-inverse{
-    border-color: #aa8888;
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+  border: 0;
 }
 
-.navbar-form{
-    margin-top: 22px;
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+  }
 }
 
-.separador {
-    min-height: 1px;
-    background: url(images/footer_line.png) repeat-x 0% 0%;
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #428bca;
 }
 
-h2 {
-    font-size: 30px;
-    font-family: 'Rum Raisin', sans-serif;
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
 }
 
-h3 {
-    font-size: 24px;
-    font-family: 'Rum Raisin', sans-serif;
-    margin: 0;
-    margin-top: 5px;
-}
 
-h4 {
-    font-size: 18px;
-    font-family: 'Rum Raisin', sans-serif;
-}
+/*
+ * Placeholder dashboard ideas
+ */
 
-h5 {
-    font-size: 16px;
-    font-family: 'Rum Raisin', sans-serif;
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
 }
-
-a:link, a:visited {
-    text-decoration: none;
-    color: #333;
-    transition: 0.45s;
+.placeholders h4 {
+  margin-bottom: 0;
 }
-
-a:hover, a:active {
-    text-decoration: none;
-    color: #e56961;
-    transition: 0.45s;
+.placeholder {
+  margin-bottom: 20px;
 }
-
-h5 b{
-    margin: 10px;
-}
-
-.col-sm-3, .col-md-2{
-    position: relative;
-    min-height: 1px;
-    float: left;
-    width: 15%;
-    margin-top: 85px;
-}
-
-.page-header {
-    margin: 160px 0px 20px;
-}
-
-.col-md-offset-2 {
-    margin-left: 0;
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
 }

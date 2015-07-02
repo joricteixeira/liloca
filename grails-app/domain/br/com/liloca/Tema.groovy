@@ -23,6 +23,11 @@ class Tema {
         Foto.findByDecoracaoInListAndIsCapa(this.decoracoes, true)
     }
 
+    boolean getVisivel(){
+        //(this.decoracoes != null) && (this.decoracoes*.fotos != null)
+        return true
+    }
+
     def List<Foto> getFotos(){
         Foto.findAllByDecoracaoInList(this.decoracoes)
     }
