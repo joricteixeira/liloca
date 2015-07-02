@@ -33,6 +33,7 @@ class TemaController {
             tema.ativo = true
         } else {
             tema.ativo = false
+            tema.destaque = false
         }
 
         tema.save()

@@ -26,7 +26,7 @@
                 <td>
                     <g:link controller="tema" action="detalhar" params="[id: tema.id]" class="btn btn-warning">Alterar Tema</g:link>
                     <g:if test="${tema.ativo}">
-                        <g:link id="botaoDesativar" controller="tema" action="atualizar" onclick="desativarTema()" params="[acao: 'desativar', idTema: tema.id]" class="btn btn-primary">Desativar Tema</g:link>
+                        <g:link id="botaoDesativar" controller="tema" action="atualizar" params="[acao: 'desativar', idTema: tema.id]" class="btn btn-primary">Desativar Tema</g:link>
                     </g:if>
                     <g:else>
                         <g:link id="botaoAtivar" controller="tema" action="atualizar" params="[acao: 'ativar', idTema: tema.id]" class="btn btn-success">Ativar Tema</g:link>
@@ -41,6 +41,9 @@
     <br><br>
 </table>
 <script>
+
+    $(document).ready(alertaTemaDestaque)
+
     $("input:checkbox").click(function () {
 
                 var checkboxRow = $(this).parent().parent()
@@ -69,22 +72,18 @@
             alertify.alert("Não foi possivel salvar: É preciso escolher 3 temas destaques!")
             return false
         } else {
-            return true
+           return true
         }
     }
 
-    function desativarTema(){
-        console.log(this)
-        console.log($(this))
-    }
-    /*$( "#botaoDesativar" ).click(function () {
+    function alertaTemaDestaque() {
+        var qtdTemasDestaque = $("input:checkbox:checked").length
 
-     console.log("Apertou o botão Desativar")
-     var checkboxDestaque = $(this).parent().val()
-     println(checkboxDestaque)
-     println($(this).parent())
-     println($(this).parent().parent())
-     })*/
+        if (qtdTemasDestaque < 3) {
+            reset()
+            alertify.log("Atenção: É preciso escolher 3 temas destaques!")
+        }
+    }
 
     function deleteConfirm(nome) {
 
