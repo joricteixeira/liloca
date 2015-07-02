@@ -58,9 +58,10 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li><a href="${createLink(controller: 'dashBoard', action: 'index')}">Mensagens Não Lidas<span class="sr-only">(current)</span></a></li>
-                <li><a href="${createLink(controller: 'dashBoard', action: 'mensagensEnviadas')}">Mensagens Enviadas<span class="sr-only">(current)</span></a></li>
-                <li><a href="${createLink(controller: 'tema', action: 'listar')}">Listar Temas<span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="${createLink(controller: 'dashBoard', action: 'index')}">Dashboard<span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="${createLink(controller: 'dashBoard', action: 'mensagensRecebidas')}">Mensagens Recebidas<span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="${createLink(controller: 'dashBoard', action: 'mensagensEnviadas')}">Mensagens Enviadas<span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="${createLink(controller: 'tema', action: 'listar')}">Listar Temas<span class="sr-only">(current)</span></a></li>
             </ul>
         </div>
 

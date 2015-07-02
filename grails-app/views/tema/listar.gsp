@@ -25,6 +25,12 @@
                 </td>
                 <td>
                     <g:link controller="tema" action="detalhar" params="[id: tema.id]" class="btn btn-warning">Alterar Tema</g:link>
+                    <g:if test="${tema.ativo}">
+                        <g:link id="botaoDesativar" controller="tema" action="atualizar" onclick="desativarTema()" params="[acao: 'desativar', idTema: tema.id]" class="btn btn-primary">Desativar Tema</g:link>
+                    </g:if>
+                    <g:else>
+                        <g:link id="botaoAtivar" controller="tema" action="atualizar" params="[acao: 'ativar', idTema: tema.id]" class="btn btn-success">Ativar Tema</g:link>
+                    </g:else>
                     <g:link controller="tema" action="remover" params="[id: tema.id]" onclick="return deleteConfirm('${tema.nome}')" class="btn btn-danger">Excluir Tema</g:link>
                 </td>
             </tr>
@@ -55,6 +61,7 @@
     )
 
     function validarTemasDestaques() {
+
         var qtdTemasDestaque = $("input:checkbox:checked").length
 
         if (qtdTemasDestaque < 3) {
@@ -66,10 +73,24 @@
         }
     }
 
+    function desativarTema(){
+        console.log(this)
+        console.log($(this))
+    }
+    /*$( "#botaoDesativar" ).click(function () {
+
+     console.log("Apertou o botão Desativar")
+     var checkboxDestaque = $(this).parent().val()
+     println(checkboxDestaque)
+     println($(this).parent())
+     println($(this).parent().parent())
+     })*/
+
     function deleteConfirm(nome) {
-        alertify.set({ labels: { ok: "Tenho!", cancel: "Não tenho!" } });
-        alertify.set({ buttonFocus: "cancel" });
-        alertify.confirm("Tem certeza que deseja excluir o tema "+nome+"?", function (e) {
+
+        alertify.set({labels: {ok: "Tenho!", cancel: "Não tenho!"}});
+        alertify.set({buttonFocus: "cancel"});
+        alertify.confirm("Tem certeza que deseja excluir o tema " + nome + "?", function (e) {
             if (e) {
                 alertify.success("Você excluiu o tema com sucesso!");
                 return true
@@ -80,15 +101,15 @@
         return false;
     }
 
-    function reset () {
+    function reset() {
         alertify.set({
-            labels : {
-                ok     : "OK",
-                cancel : "Cancel"
+            labels: {
+                ok: "OK",
+                cancel: "Cancel"
             },
-            delay : 5000,
-            buttonReverse : false,
-            buttonFocus   : "ok"
+            delay: 5000,
+            buttonReverse: false,
+            buttonFocus: "ok"
         });
     }
 </script>

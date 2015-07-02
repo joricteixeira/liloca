@@ -8,7 +8,7 @@ class BuscaController {
 
     def index() {
 
-        temas = Tema.findAll()
+        temas = Tema.findAllByAtivo(true)
 
         render(view: '/busca/busca', model: [temas: temas])
     }
@@ -21,15 +21,15 @@ class BuscaController {
 
             switch (params.tipoOrdenacao) {
                 case "Ordenar por...":
-                    temas = Tema.findAllByNomeIlike("%" + nomeProcurado + "%")
+                    temas = Tema.findAllByNomeIlikeAndAtivo("%" + nomeProcurado + "%", true)
                     render(view: '../busca/searchResult', model: [temas: temas])
                     break
                 case "Ordenar por: Nome [A - Z]":
-                    temas = Tema.findAllByNomeIlike("%" + nomeProcurado + "%", [sort: "nome"])
+                    temas = Tema.findAllByNomeIlikeAndAtivo("%" + nomeProcurado + "%", [sort: "nome"], true)
                     render(view: '../busca/searchResult', model: [temas: temas])
                     break
                 case "Ordenar por: Nome [Z - A]":
-                    temas = Tema.findAllByNomeIlike("%" + nomeProcurado + "%", [sort: "nome", order:"desc"])
+                    temas = Tema.findAllByNomeIlikeAndAtivo("%" + nomeProcurado + "%", [sort: "nome", order:"desc"], true)
                     render(view: '../busca/searchResult', model: [temas: temas])
                     break
             }
@@ -37,15 +37,15 @@ class BuscaController {
 
             switch (params.tipoOrdenacao) {
                 case "Ordenar por...":
-                    temas = Tema.findAll()
+                    temas = Tema.findAllByAtivo(true)
                     render(view: '../busca/searchResult', model: [temas: temas])
                     break
                 case "Ordenar por: Nome [A - Z]":
-                    temas = Tema.findAll("from Tema order by nome")
+                    temas = Tema.findAll("from Tema where ativo=true order by nome")
                     render(view: '../busca/searchResult', model: [temas: temas])
                     break
                 case "Ordenar por: Nome [Z - A]":
-                    temas = Tema.findAll("from Tema order by nome desc")
+                    temas = Tema.findAll("from Tema where ativo=true order by nome desc")
                     render(view: '../busca/searchResult', model: [temas: temas])
                     break
             }

@@ -12,8 +12,13 @@ class DashBoardController {
         render(view:'/admin.dashboard', model:[temas: Tema.list()])
     }
 
+    def mensagensRecebidas(){
+
+        render(view: '/mail/msgRecebidas', model: [temas: Tema.list()])
+    }
+
     def mensagensEnviadas(){
 
-        render(view: '/admin.msgEnviadas', model: [temas: Tema.list()])
+        render(view: '/mail/msgEnviadas', model: [temas: Tema.list()])
     }
 }

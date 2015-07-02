@@ -4,6 +4,7 @@ class Tema {
 
     String nome
     boolean destaque
+    boolean ativo
 
     static hasMany = [decoracoes: Decoracao]
 
@@ -17,6 +18,7 @@ class Tema {
         id column: 'ID'
         nome column: 'NOME'
         destaque column: 'DESTAQUE'
+        ativo column: 'ATIVO'
     }
 
     def Foto getFotoCapa() {

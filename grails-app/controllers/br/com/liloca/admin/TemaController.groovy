@@ -23,7 +23,22 @@ class TemaController {
         render(view: '/tema/alterar', model: [tema: tema])
     }
 
-    def atualizar() {}
+    def atualizar() {
+
+        def id = Long.parseLong(params.idTema)
+        def tema = Tema.findById(id)
+        def acao = params.acao
+
+        if (acao == 'ativar') {
+            tema.ativo = true
+        } else {
+            tema.ativo = false
+        }
+
+        tema.save()
+
+        redirect(action: "listar")
+    }
 
     def preRemover() {}
 
