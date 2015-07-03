@@ -1,5 +1,6 @@
 package br.com.liloca
 
+import br.com.liloca.enums.OrdenacaoBuscaEnum
 import org.codehaus.groovy.grails.commons.GrailsStringUtils
 
 class BuscaController {
@@ -8,9 +9,11 @@ class BuscaController {
 
     def index() {
 
-        temas = Tema.findAllByAtivo(true)
+        temas = Tema.findAll()
 
-        render(view: '/busca/busca', model: [temas: temas])
+        def ordenacoesBusca = OrdenacaoBuscaEnum
+
+        render(view: '/busca/busca', model: [temas: temas, ordenacoesBusca: ordenacoesBusca])
     }
 
     def buscarTema() {
@@ -27,7 +30,9 @@ class BuscaController {
             parametros.put("pNome","%${nomeProcurado}%")
         }
 
-        query.append(" ORDER BY T.nome")
+        int identificadorOrdenacao = Integer.parseInt(params.tipoOrdenacao)
+        String ordenacao = OrdenacaoBuscaEnum.findByIdentificador(identificadorOrdenacao).valorQuery
+        query.append(ordenacao)
 
         def temas = Tema.executeQuery(query.toString() ,parametros)
 
