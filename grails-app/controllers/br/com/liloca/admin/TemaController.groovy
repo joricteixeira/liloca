@@ -46,6 +46,7 @@ class TemaController {
 
     def alterarDestaque() {
 
+        //TODO Funcionalidade quebrada pós merge 03.07.2015 - equalizar metodos provenientes da listagem com metodos do detalhe
         def temas = Tema.list()
         def tema = null
         def id = null

@@ -39,7 +39,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="${createLink(controller: 'home', action: 'index')}">
-                <img id="logo" src="${resource(dir: 'images', file: 'logo.png')}" width="110" height="110">
+                <img id="logo" src="${resource(dir: 'images', file: 'logo.png')}" width="75" height="75">
             </a>
         </div>
         <div id="navbar" class="collapse navbar-collapse navbar-right">
@@ -59,9 +59,10 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
+                <div style="min-height: 90px"></div>
                 <li class="active"><a href="${createLink(controller: 'dashBoard', action: 'index')}">Dashboard<span class="sr-only">(current)</span></a></li>
                 <li><a href="${createLink(controller: 'tema', action: 'listar')}">Listar Temas<span class="sr-only">(current)</span></a></li>
-                <li><a href="${createLink(controller: 'dashBoard', action: 'index')}">Mensagens Não Lidas<span class="sr-only">(current)</span></a></li>
+                <li><a href="${createLink(controller: 'dashBoard', action: 'mensagensRecebidas')}">Mensagens Recebidas<span class="sr-only">(current)</span></a></li>
                 <li><a href="${createLink(controller: 'dashBoard', action: 'mensagensEnviadas')}">Mensagens Enviadas<span class="sr-only">(current)</span></a></li>
             </ul>
         </div>

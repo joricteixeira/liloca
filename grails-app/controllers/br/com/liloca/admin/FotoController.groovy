@@ -7,7 +7,7 @@ class FotoController {
     def index() {}
 
     def definirCapa(){
-
+        //TODO Funcionalidade quebrada pós merge 03.07.2015 - equalizar metodos provenientes da listagem com metodos do detalhe
         def idFoto = Long.parseLong(params.idFoto)
         def idTema = Long.parseLong(params.idTema)
         def tema = Tema.findById(idTema)
