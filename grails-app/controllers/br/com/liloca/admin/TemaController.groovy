@@ -1,6 +1,7 @@
 package br.com.liloca.admin
 
 import br.com.liloca.Tema
+import br.com.liloca.command.TemaCommand
 import grails.plugin.springsecurity.annotation.Secured
 
 @Secured(['ROLE_ADMIN'])
@@ -23,24 +24,17 @@ class TemaController {
         render(view: '/tema/alterar', model: [tema: tema])
     }
 
-    def atualizar() {
+    def atualizar(TemaCommand temaCommand) {
 
-        def id = Long.parseLong(params.id ?: params.idTema ?: 0)
-        def acao = params.acao
+        //TODO equalizar métodos provenientes da listagem com métodos do detalhe
         
-        def tema = Tema.findById(id)
-        
-        tema.nome = params.nome
-        if (acao == 'ativar') {
-            tema.ativo = true
-        } else {
-            tema.ativo = false
-            tema.destaque = false
-        }
-        
-        def salvo = tema.save()
+        def tema = Tema.findById(temaCommand.id)
+        tema.nome = temaCommand.nome
+        tema.destaque = temaCommand.destaque
 
-        render(view: '/tema/alterar', model: [tema: tema, salvo: salvo, processado: true])
+        def salvoComSucesso = tema.save()
+
+        render(view: '/tema/alterar', model: [tema: tema, salvo: salvoComSucesso, processado: true])
     }
 
     def preRemover() {}

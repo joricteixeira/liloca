@@ -14,7 +14,7 @@ class UrlMappings {
         "/admin/tema" (controller: "tema", action: "listar")
         "/admin/tema/$id"{
             controller = "tema"
-            action = "listar"
+            action = [GET:"listar", POST:"atualizar"]
             constraints {
                 id(matches:"\\d+")
             }

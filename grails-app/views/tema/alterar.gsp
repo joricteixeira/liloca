@@ -16,13 +16,10 @@
         </g:else>
     </g:if>
 
-${createLink(controller: "tema", action: "atualizar")}
-
     <div class="alert-success row">
         <br>
 
-        <g:form>
-            <input type="hidden" name="id" value="${tema.id}">
+        <g:form uri="/admin/tema/${tema.id}">
         <div class="row">
         <div class="col-md-1">
             <label>Nome:</label>
