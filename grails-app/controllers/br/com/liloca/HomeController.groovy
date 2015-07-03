@@ -5,7 +5,7 @@ class HomeController {
 
     def index() {
 
-        def temas = Tema.findAllByDestaque(true, [max: 3])
+        def temas = Tema.findAllByDestaqueAndAtivo(true, true, [max: 3])
 
         if (temas.size() < 3) {
             temas.clear();

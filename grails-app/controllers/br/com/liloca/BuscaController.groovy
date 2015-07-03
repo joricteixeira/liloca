@@ -8,7 +8,7 @@ class BuscaController {
 
     def index() {
 
-        temas = Tema.findAll()
+        temas = Tema.findAllByAtivo(true)
 
         render(view: '/busca/busca', model: [temas: temas])
     }

@@ -25,9 +25,19 @@ class TemaController {
 
     def atualizar() {
 
-        def id = Integer.parseInt(params.id)
+        def id = Long.parseLong(params.id ?: params.idTema ?: 0)
+        def acao = params.acao
+        
         def tema = Tema.findById(id)
+        
         tema.nome = params.nome
+        if (acao == 'ativar') {
+            tema.ativo = true
+        } else {
+            tema.ativo = false
+            tema.destaque = false
+        }
+        
         def salvo = tema.save()
 
         render(view: '/tema/alterar', model: [tema: tema, salvo: salvo, processado: true])
