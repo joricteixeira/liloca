@@ -26,8 +26,8 @@ class TemaController {
 
     def atualizar(TemaCommand temaCommand) {
 
-        //TODO equalizar métodos provenientes da listagem com métodos do detalhe
-        
+        //TODO equalizar metodos provenientes da listagem com metodos do detalhe
+
         def tema = Tema.findById(temaCommand.id)
         tema.nome = temaCommand.nome
         tema.destaque = temaCommand.destaque

@@ -21,4 +21,8 @@ class Foto {
         decoracao column: 'DECORACAO_ID'
         isCapa column: 'CAPA'
     }
+
+    def String getNomeMinificado(){
+        this.titulo.replace(" ","").replaceAll("[^\\p{ASCII}]", "")
+    }
 }

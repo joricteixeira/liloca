@@ -14,10 +14,12 @@
     <link rel="apple-touch-icon" sizes="114x114" href="${resource(dir: 'images', file: 'apple-touch-icon-retina.png')}">
 
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'bootstrap.min.css')}" type="text/css">
-    <link rel="stylesheet" href="${resource(dir: 'css', file: 'dashboard.css')}" type="text/css">
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'styleAdmin.css')}" type="text/css">
 
     <script type="text/javascript" src="${resource(dir: 'js', file: 'jquery-1.11.3.min.js')}"></script>
     <script type="text/javascript" src="${resource(dir: 'js', file: 'bootstrap.min.js')}"></script>
+
+    <link href='http://fonts.googleapis.com/css?family=Rum+Raisin' rel='stylesheet' type='text/css'>
 
     <g:layoutHead/>
 
@@ -36,21 +38,20 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="${createLink(controller: 'dashBoard', action: 'index')}">
-                <img id="logo" src="${resource(dir: 'images', file: 'logo.png')}" width="40" height="40">
+            <a class="navbar-brand" href="${createLink(controller: 'home', action: 'index')}">
+                <img id="logo" src="${resource(dir: 'images', file: 'logo.png')}" width="110" height="110">
             </a>
         </div>
-        <!--div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Dashboard</a></li>
-                        <li><a href="#">Settings</a></li>
-                        <li><a href="#">Profile</a></li>
-                        <li><a href="#">Help</a></li>
-                    </ul>
-                    <form class="navbar-form navbar-right">
-                        <input type="text" class="form-control" placeholder="Search...">
-                    </form>
-        </div-->
+        <div id="navbar" class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <li>
+                    <g:link controller="home" action="index" class="linkCabecalho">Home</g:link>
+                </li>
+                <li>
+                    <g:link controller="busca" action="index" class="linkCabecalho">Todos os Temas</g:link>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
 

@@ -155,9 +155,7 @@
             <div class="container">
                 <div class="row text-center">
                     <div class="col-xs-12 col-sm-6 col-md-6 text-center"></div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 text-center">
-                        <h3>Fale Conosco</h3>
-                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 text-center"></div>
                 </div>
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6 text-center">
@@ -176,7 +174,7 @@
                             </div>
 
                         </g:if>
-
+                        <h3 class="text-center" style="padding: 10px">Fale Conosco</h3>
                         <g:render template="/mail/formulario" />
                     </div>
                 </div>
