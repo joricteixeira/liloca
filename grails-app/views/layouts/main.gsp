@@ -15,10 +15,14 @@
 
         <link rel="stylesheet" href="${resource(dir: 'css', file: 'bootstrap.min.css')}" type="text/css">
         <link rel="stylesheet" href="${resource(dir: 'css', file: 'style.css')}" type="text/css">
+        <link rel="stylesheet" href="${resource(dir: 'css', file: 'lazy-load.css')}" type="text/css">
 
         <script type="text/javascript" src="${resource(dir: 'js', file: 'jquery-1.11.3.min.js')}"></script>
+        <script type="text/javascript" src="${resource(dir: 'js', file: 'jquery-1.7.2.min.js')}"></script>
         <script type="text/javascript" src="${resource(dir: 'js', file: 'bootstrap.min.js')}"></script>
         <script type="text/javascript" src="${resource(dir: 'js', file: 'parallax.min.js')}"></script>
+        <script type="text/javascript" src="${resource(dir: 'js', file: 'cherry.lazy-load.js')}"></script>
+        <script type="text/javascript" src="${resource(dir: 'js', file: 'device.min.js')}"></script>
 
         <!-- LightBox -->
         <link rel="stylesheet" href="${resource(dir: 'css', file: 'magnific-popup.css')}" type="text/css">

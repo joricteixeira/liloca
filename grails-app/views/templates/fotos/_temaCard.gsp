@@ -3,6 +3,7 @@
         <figure class="thumbnail">
             <a href="#" rel="prettyPhoto${tema.nomeMinificado}" title="${tema.nome}">
                 <img src="${tema.fotoCapa.url}" alt="Lorem ipsum dolor.">
+                <span class="zoom-icon"></span>
             </a>
         </figure>
         <div class="row">

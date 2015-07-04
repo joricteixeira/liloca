@@ -44,7 +44,7 @@ body{
     color: #f47971;
 }
 
-.thumbnailContacts{
+/*.thumbnailContacts{
     display: block;
     margin: 10px;
     line-height: 1.42857143;
@@ -61,7 +61,7 @@ body{
     font-size: 22px;
     font-weight: 400;
     color: #f47971;
-}
+}*/
 
 .featured-thumbnail{
     margin-bottom: 20px;
@@ -277,4 +277,138 @@ a.linkCabecalho:hover, a.linkCabecalho:active {
     -moz-transition: 0.2s;
     -o-transition: 0.2s;
     transition: 0.2s;
+}
+
+.no-rgba .zoom-icon {
+    background: rgba(0, 0, 0, 0) url("../images/black-opacity-60.png") repeat scroll 0 0;
+    visibility: hidden;
+}
+
+.zoom-icon:before {
+    background: rgba(0, 0, 0, 0) url("../images/magnify-alt.png") no-repeat scroll 50% 50%;
+    content: "";
+    display: block;
+    height: 26px;
+    left: 50%;
+    margin: -13px 0 0 -13px;
+    position: absolute;
+    top: 50%;
+    width: 25px;
+}
+
+.no-rgba .image-wrap:hover .zoom-icon, .featured-thumbnail a:hover .zoom-icon, a.thumbnail:hover .zoom-icon, .thumbnail__portfolio a:hover .zoom-icon {
+    visibility: visible;
+}
+.featured-thumbnail a:hover .zoom-icon, a.thumbnail:hover .zoom-icon, .thumbnail__portfolio a:hover .zoom-icon {
+    opacity: 1;
+}
+
+.thumbnail .zoom-icon {
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+}
+
+.thumbnail .zoom-icon:before {
+    background: rgba(0, 0, 0, 0) url("../images/magnify.png") no-repeat scroll 0 0;
+    height: 46px;
+    margin: -23px 0 0 -23px;
+    width: 46px;
+}
+
+/* ----------------------------------------
+ Testando efeito especial tela de contatos
+---------------------------------------- */
+
+.banner-wrap {
+    background:#fff;
+    border: 1px solid #ddd;
+    min-height:126px;
+    margin: 10px;
+    padding-top: 17px;
+    -webkit-border-radius:14px;
+    -moz-border-radius:14px;
+    border-radius:14px;
+    -webkit-transition:0.8s;
+    -moz-transition:0.8s;
+    -o-transition:0.8s;
+    transition:0.8s;
+}
+@media (min-width: 980px) and (max-width: 1200px) {
+    .banner-wrap { padding:22px 20px 12px 20px; }
+}
+html.ie8 .banner-wrap { padding:22px 20px 12px 20px; }
+@media (min-width: 768px) and (max-width: 979px) {
+    .banner-wrap { padding:22px 15px 12px 15px; }
+}
+@media (max-width: 767px) {
+    .banner-wrap {
+        min-height:10px;
+        margin:20px 0 0 0;
+        padding:22px 50px 27px 50px;
+    }
+}
+.banner-wrap:hover {
+    -webkit-box-shadow:0 0 7px rgba(0,0,0,0.2);
+    -moz-box-shadow:0 0 7px rgba(0,0,0,0.2);
+    box-shadow:0 0 7px rgba(0,0,0,0.2);
+    -webkit-transition:0.4s;
+    -moz-transition:0.4s;
+    -o-transition:0.4s;
+    transition:0.4s;
+}
+.banner-wrap.banner_1 { text-align:center; }
+.banner-wrap.banner_1 h5 {
+    margin:0 0 7px 0;
+    line-height:30px;
+    font-size:30px;
+    font-weight:400;
+    text-transform:uppercase;
+    color:#d78023;
+}
+@media (min-width: 768px) and (max-width: 979px) {
+    .banner-wrap.banner_1 h5 {
+        padding:5px 0 0 0;
+        line-height:24px;
+        font-size:24px;
+    }
+}
+.banner-wrap.banner_1 h5 b {
+    display:block;
+    -webkit-transition:0.8s;
+    -moz-transition:0.8s;
+    -o-transition:0.8s;
+    transition:0.8s;
+    line-height:20px;
+    font-size:18px;
+    font-weight:400;
+    color:#332529;
+}
+.banner-wrap.banner_1 h5 a {
+    text-decoration:none;
+    color:#d78023;
+}
+.banner-wrap.banner_1 h5 a b { color:#332529; }
+.banner-wrap.banner_1 h5 a:hover { color:#f47971; }
+.banner-wrap.banner_1 h5 a:hover b {
+    -webkit-transition:0.4s;
+    -moz-transition:0.4s;
+    -o-transition:0.4s;
+    transition:0.4s;
+    color:#d78023;
+}
+.banner-wrap.banner_1 p {
+    background:#FFFFFF;
+    margin:0;
+    line-height: 25px;
+    font-family: 'Rum Raisin', sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #f47971;
+}
+@media (min-width: 768px) and (max-width: 979px) {
+    .banner-wrap.banner_1 p {
+        line-height:14px;
+        font-size:11px;
+    }
 }
