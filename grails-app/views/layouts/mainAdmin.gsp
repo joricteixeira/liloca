@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'bootstrap.min.css')}" type="text/css">
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'styleAdmin.css')}" type="text/css">
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'dashboard.css')}" type="text/css">
 
     <script type="text/javascript" src="${resource(dir: 'js', file: 'jquery-1.11.3.min.js')}"></script>
     <script type="text/javascript" src="${resource(dir: 'js', file: 'bootstrap.min.js')}"></script>
@@ -42,16 +43,6 @@
                 <img id="logo" src="${resource(dir: 'images', file: 'logo.png')}" width="75" height="75">
             </a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse navbar-right">
-            <ul class="nav navbar-nav">
-                <li>
-                    <g:link controller="home" action="index" class="linkCabecalho">Home</g:link>
-                </li>
-                <li>
-                    <g:link controller="busca" action="index" class="linkCabecalho">Todos os Temas</g:link>
-                </li>
-            </ul>
-        </div>
     </div>
 </nav>
 
@@ -59,7 +50,7 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <div style="min-height: 90px"></div>
+                <div style="min-height: 10px"></div>
                 <li class="active"><a href="${createLink(controller: 'dashBoard', action: 'index')}">Dashboard<span class="sr-only">(current)</span></a></li>
                 <li><a href="${createLink(controller: 'tema', action: 'listar')}">Listar Temas<span class="sr-only">(current)</span></a></li>
                 <li><a href="${createLink(controller: 'dashBoard', action: 'mensagensRecebidas')}">Mensagens Recebidas<span class="sr-only">(current)</span></a></li>
@@ -67,7 +58,7 @@
             </ul>
         </div>
 
-        <div class="col-sm-9 col-sm-offset-0 col-md-10 col-md-offset-2 main">
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <g:layoutBody/>
         </div>
     </div>

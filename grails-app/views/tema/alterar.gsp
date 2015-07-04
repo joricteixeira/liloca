@@ -3,7 +3,6 @@
 </head>
 
 <body>
-<div style="min-height: 100px"></div>
 
 <g:if test="${processado}">
     <g:if test="${salvo}">

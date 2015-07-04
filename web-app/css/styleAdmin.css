@@ -3,7 +3,6 @@ body{
 }
 
 .navbar{
-    min-height: 80px;
     background-color: #ffaaaa;
 }
 
@@ -30,27 +29,7 @@ body{
     background: url(images/footer_line.png) repeat-x 0% 0%;
 }
 
-h1 {
-    font-size: 40px;
-    font-family: 'Rum Raisin', sans-serif;
-}
-h2 {
-    font-size: 30px;
-    font-family: 'Rum Raisin', sans-serif;
-}
-
-h3 {
-    font-size: 24px;
-    font-family: 'Rum Raisin', sans-serif;
-}
-
-h4 {
-    font-size: 18px;
-    font-family: 'Rum Raisin', sans-serif;
-}
-
-h5 {
-    font-size: 16px;
+h1, h2 ,h3 ,h4 ,h5,h6 {
     font-family: 'Rum Raisin', sans-serif;
 }
 
@@ -64,14 +43,6 @@ a:hover, a:active {
     text-decoration: none;
     color: #e56961;
     transition: 0.45s;
-}
-
-.page-header {
-    margin: 160px 0px 20px;
-}
-
-.col-md-offset-2 {
-    margin-left: 0;
 }
 
 .thumbnail{
@@ -147,22 +118,9 @@ figure.thumbnail{
     overflow: hidden;
 }
 
-.parallax-window {
-    min-height: 550px;
-    background: transparent;
-}
-
 footer{
     background-color: #eeeecc;
     border-top: 1px solid #ddd;
-}
-
-.container{
-    padding-left: 15px;
-}
-
-.col-md-1 {
-    width: 5%;
 }
 
 input[type=checkbox] {
