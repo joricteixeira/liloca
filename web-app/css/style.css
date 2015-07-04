@@ -57,6 +57,11 @@ body{
     box-shadow: 0px 0px 6px #888888;
 }
 
+.featured-thumbnail a {
+    position: relative;
+    display: block;
+}
+
 li.temaCard{
     padding: 4px;
     list-style: none;
@@ -66,6 +71,14 @@ li.temaCard{
 
 li.no-decoration{
     list-style: none;
+}
+
+figure {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 40px;
+    -webkit-margin-end: 40px;
 }
 
 figure.thumbnail{
@@ -247,6 +260,7 @@ a.linkCabecalho:hover, a.linkCabecalho:active {
 /* ----------------------------------------
    Efeito especial Zoom Icon Thumbnails
 ---------------------------------------- */
+
 .zoom-icon {
     position: absolute;
     top: 0;
@@ -280,10 +294,10 @@ a.linkCabecalho:hover, a.linkCabecalho:active {
     width: 25px;
 }
 
-.no-rgba .image-wrap:hover .zoom-icon, .featured-thumbnail a:hover .zoom-icon, a.thumbnail:hover .zoom-icon, .thumbnail__portfolio a:hover .zoom-icon {
+.no-rgba .image-wrap:hover .zoom-icon, .featured-thumbnail a:hover .zoom-icon, a.thumbnail:hover .zoom-icon {
     visibility: visible;
 }
-.featured-thumbnail a:hover .zoom-icon, a.thumbnail:hover .zoom-icon, .thumbnail__portfolio a:hover .zoom-icon {
+.featured-thumbnail a:hover .zoom-icon, a.thumbnail:hover .zoom-icon {
     opacity: 1;
 }
 

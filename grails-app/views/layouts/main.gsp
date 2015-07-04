@@ -221,14 +221,13 @@
                                 <a href="${resource(controller: "home", action: "index")}" title="Liloca Festas - Decoração de Festa Infantil" class="site-name">Liloca Festas</a> © 2015 Todos direitos reservados <!--i>|</i> <a href="" title="Política de Privacidade">Política de Privacidade</a-->
                         </div> </div>
                 </div>
-
-                <p id="back-top" style="display: block;">
-                    <a href="#top">
-                        <span></span>
-                    </a>
-                </p>
+                <div id="back-top-wrapper" class="visible-desktop">
+                    <p id="back-top" style="display: block;">
+                        <a href="#top">
+                            <span></span>
+                        </a>
+                    </p>
                 </div>
-
             </div>
         </footer>
 		<r:layoutResources />
