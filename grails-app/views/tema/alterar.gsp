@@ -67,7 +67,7 @@
         </g:else>
         <figure class="thumbnail">
             <a href="#" rel="prettyPhoto${foto.nomeMinificado}" title="${foto.titulo}">
-                <img src="${foto.url}" alt="Error 404">
+                <img src="../../../${foto.url}">
             </a>
         </figure>
 
