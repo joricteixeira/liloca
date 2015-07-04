@@ -222,6 +222,13 @@
                         </div> </div>
                 </div>
 
+                <p id="back-top" style="display: block;">
+                    <a href="#top">
+                        <span></span>
+                    </a>
+                </p>
+                </div>
+
             </div>
         </footer>
 		<r:layoutResources />

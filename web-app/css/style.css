@@ -44,25 +44,6 @@ body{
     color: #f47971;
 }
 
-/*.thumbnailContacts{
-    display: block;
-    margin: 10px;
-    line-height: 1.42857143;
-    height: 115px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-}
-
-.thumbnailContacts p {
-    margin:0;
-    line-height: 25px;
-    font-family: 'Rum Raisin', sans-serif;
-    font-size: 22px;
-    font-weight: 400;
-    color: #f47971;
-}*/
-
 .featured-thumbnail{
     margin-bottom: 20px;
     border-radius: 16px;
@@ -263,6 +244,9 @@ a.linkCabecalho:hover, a.linkCabecalho:active {
     -webkit-filter: blur(5px);
 }
 
+/* ----------------------------------------
+   Efeito especial Zoom Icon Thumbnails
+---------------------------------------- */
 .zoom-icon {
     position: absolute;
     top: 0;
@@ -317,7 +301,7 @@ a.linkCabecalho:hover, a.linkCabecalho:active {
 }
 
 /* ----------------------------------------
- Testando efeito especial tela de contatos
+    Efeito especial tela de contatos
 ---------------------------------------- */
 
 .banner-wrap {
@@ -411,4 +395,71 @@ html.ie8 .banner-wrap { padding:22px 20px 12px 20px; }
         line-height:14px;
         font-size:11px;
     }
+}
+
+/* ----------------------------------------
+    Efeito especial Icon Top Wrapper
+---------------------------------------- */
+
+#back-top-wrapper {
+    bottom: 10px;
+    overflow: hidden;
+    position: fixed;
+    right: 10px;
+    z-index: 99;
+}
+
+.visible-desktop {
+    display: inherit !important;
+}
+
+#back-top-wrapper p#back-top {
+    margin: 0;
+}
+
+#back-top a {
+    display: block;
+    width: 50px;
+    color: #bbb;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font: 11px/100% Arial, Helvetica, sans-serif;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+}
+
+#back-top-wrapper p#back-top a span {
+    background-color: #e56961;
+    margin: 0;
+}
+
+#back-top-wrapper p#back-top a:hover span {
+    background-color: #6fb8af;
+}
+
+#back-top {
+    display: none;
+}
+
+#back-top a:hover {
+    color: #000;
+}
+
+#back-top a:hover span {
+    background-color: #333;
+}
+
+#back-top span {
+    display: block;
+    margin-bottom: 7px;
+    width: 50px;
+    height: 50px;
+    background: #0088cc url(../images/up-arrow.png) no-repeat center center;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
 }
