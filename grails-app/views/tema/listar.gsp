@@ -24,7 +24,7 @@
                     <g:checkBox name="temaDestaque" checked="${tema.destaque}" value="${tema.id}"/>
                 </td>
                 <td>
-                    <g:link controller="tema" action="detalhar" params="[id: tema.id]" class="btn btn-warning">Alterar Tema</g:link>
+                    <a href="${createLink(url: "/admin/tema/${tema.id}")}" class="btn btn-warning">Alterar Tema</a>
                     <g:if test="${tema.ativo}">
                         <g:link id="botaoDesativar" controller="tema" action="atualizar" params="[acao: 'desativar', idTema: tema.id]" class="btn btn-primary">Desativar Tema</g:link>
                     </g:if>

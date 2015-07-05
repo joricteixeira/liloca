@@ -14,7 +14,7 @@ class UrlMappings {
         "/admin/tema" (controller: "tema", action: "listar")
         "/admin/tema/$id"{
             controller = "tema"
-            action = [GET:"listar", POST:"atualizar"]
+            action = [GET:"detalhar", POST:"atualizar"]
             constraints {
                 id(matches:"\\d+")
             }
@@ -22,7 +22,13 @@ class UrlMappings {
 
         "/admin/decoracao" (controller: "decoracao", action: "index")
         "/admin/tema/$id/decoracao" (controller: "decoracao", action: "listar")
-        "/admin/tema/decoracao/$id" (controller: "decoracao", action: "detalhar")
+        "/admin/tema/decoracao/$id"{
+            controller = "decoracao"
+            action = [GET:"detalhar", POST:"atualizar"]
+            constraints {
+                id(matches:"\\d+")
+            }
+        }
 
         "/admin/tema/decoracao/$id/propriedade" (controller: "propriedade", action: "index")
         "/admin/tema/decoracao/propriedade/$id" (controller: "propriedade", action: "index")
