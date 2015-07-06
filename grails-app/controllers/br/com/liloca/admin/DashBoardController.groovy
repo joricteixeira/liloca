@@ -1,5 +1,6 @@
 package br.com.liloca.admin
 
+import br.com.liloca.MensagemContato
 import br.com.liloca.Tema
 import grails.plugin.springsecurity.annotation.Secured
 
@@ -9,7 +10,9 @@ class DashBoardController {
 
     def index() {
 
-        render(view:'/admin.dashboard', model:[temas: Tema.list()])
+        def mensagensNaoLidas = MensagemContato.findAllByLida(false)
+
+        render(view:'/admin.dashboard', model:[mensagensNaoLidas: mensagensNaoLidas])
     }
 
     def mensagensRecebidas(){

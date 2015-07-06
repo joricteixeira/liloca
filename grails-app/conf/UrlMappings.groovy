@@ -20,6 +20,7 @@ class UrlMappings {
             }
         }
         "/admin/tema/novo"(controller: "tema", action: "novo")
+        "/admin/tema/$id/excluir" (controller: "tema", action: "excluir")
 
         "/admin/decoracao" (controller: "decoracao", action: "index")
         "/admin/tema/$id/decoracao" (controller: "decoracao", action: "listar")
@@ -40,7 +41,7 @@ class UrlMappings {
 
         "500"(view:'/error')
 
-        //TODO remover para go-live
+        //TODO excluir para go-live
         "/$controller/$action?/$id?(.$format)?"{
             constraints {
                 // apply constraints here

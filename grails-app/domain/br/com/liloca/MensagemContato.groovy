@@ -6,6 +6,8 @@ class MensagemContato {
     String telefone
     String email
     String mensagem
+    boolean lida
+    Date dataEnvio
 
     static constraints = {
         nome (minSize: 3)
@@ -23,5 +25,7 @@ class MensagemContato {
         telefone column: 'TELEFONE'
         email column: 'EMAIL'
         mensagem column: 'MENSAGEM', type: 'text'
+        lida column: 'LIDA'
+        dataEnvio column: 'DATA_ENVIO'
     }
 }

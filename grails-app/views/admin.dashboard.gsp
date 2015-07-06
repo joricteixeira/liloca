@@ -4,20 +4,17 @@
 
 <body>
 
-<h1 class="page-header">Dashboard</h1>
-<table class="table table-bordered table-striped">
-    <tr>
-        <td>#</td>
-        <td>Nome</td>
-        <td>Ações</td>
-    </tr>
-    <g:each in="${temas}" var="tema">
-        <tr>
-            <td>${tema.id}</td>
-            <td>${tema.nome}</td>
-            <td><button class="btn btn-warning">Button1</button> <button class="btn btn-danger">Button2</button></td>
-        </tr>
+<h1 class="page-header">Mensagens de Contato</h1>
+<ul class="list-group">
+    <g:each in="${mensagensNaoLidas}" var="mensagem">
+        <li class="list-group-item">
+            <h4 class="list-group-item-heading text-center">De: ${mensagem.email}</h4>
+            <p class="list-group-item-text"><b>Nome:</b> ${mensagem.nome}</p>
+            <p class="list-group-item-text"><b>Telefone:</b> ${mensagem.telefone}</p>
+            <p class="list-group-item-text"><b>Mensagem:</b> ${mensagem.mensagem}</p>
+            <p class="list-group-item-text"><b>Data envio:</b> <g:formatDate date="${mensagem.dataEnvio}" /></p>
+        </li>
     </g:each>
-</table>
+</ul>
 
 </body>

@@ -2,7 +2,9 @@ package br.com.liloca.admin
 
 import br.com.liloca.Decoracao
 import br.com.liloca.command.DecoracaoCommand
+import grails.plugin.springsecurity.annotation.Secured
 
+@Secured(['ROLE_ADMIN'])
 class DecoracaoController {
 
     def detalhar() {

@@ -7,13 +7,15 @@ import grails.plugin.springsecurity.annotation.Secured
 @Secured(['ROLE_ADMIN'])
 class TemaController {
 
+    def temaService
+
     def novo(){
         render(view: '/tema/novoTema')
     }
 
     def listar() {
 
-        def temas = Tema.list()
+        def temas = Tema.findAll()
 
         render(view: '/tema/listarTema', model: [temas: temas])
     }
@@ -46,11 +48,12 @@ class TemaController {
         }
     }
 
-    def preRemover() {}
+    def excluir() {
+        def id = Long.parseLong(params.id ?: "0")
+        temaService.excluirTema(id)
 
-    def remover() {
 
-        redirect(action: "listar")
+        listar()
     }
 
     def alterarDestaque() {

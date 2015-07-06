@@ -36,7 +36,8 @@
                     <g:else>
                         <g:link id="botaoAtivar" controller="tema" action="atualizar" params="[acao: 'ativar', idTema: tema.id]" class="btn btn-success">Ativar Tema</g:link>
                     </g:else>
-                    <g:link controller="tema" action="remover" params="[id: tema.id]" onclick="return deleteConfirm('${tema.nome}')" class="btn btn-danger">Excluir Tema</g:link>
+
+                    <g:render template="modalConfirmarDeleção" model="[id: tema.id]"/>
                 </td>
             </tr>
         </g:each>

@@ -56,6 +56,7 @@ class EmailService {
             mensagem.telefone = mailFormCommand.telefone
             mensagem.email = mailFormCommand.email
             mensagem.mensagem = mailFormCommand.mensagem
+            mensagem.dataEnvio = new Date()
 
             mensagem.save(failOnError: true)
 
