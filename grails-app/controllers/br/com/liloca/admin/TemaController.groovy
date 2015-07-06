@@ -7,12 +7,15 @@ import grails.plugin.springsecurity.annotation.Secured
 @Secured(['ROLE_ADMIN'])
 class TemaController {
 
+    def novo(){
+        render(view: '/tema/novoTema')
+    }
 
     def listar() {
 
         def temas = Tema.list()
 
-        render(view: '/tema/listar', model: [temas: temas])
+        render(view: '/tema/listarTema', model: [temas: temas])
     }
 
     def detalhar() {
@@ -21,20 +24,26 @@ class TemaController {
 
         def tema = Tema.findById(id)
 
-        render(view: '/tema/alterar', model: [tema: tema])
+        render(view: '/tema/detalharTema', model: [tema: tema])
     }
 
     def atualizar(TemaCommand temaCommand) {
 
         //TODO equalizar metodos provenientes da listagem com metodos do detalhe
 
-        def tema = Tema.findById(temaCommand.id)
+        def tema = Tema.findById(temaCommand.id) ?:new Tema()
+
         tema.nome = temaCommand.nome
         tema.destaque = temaCommand.destaque
+        tema.ativo = temaCommand.ativo
 
         def salvoComSucesso = tema.save()
 
-        render(view: '/tema/alterar', model: [tema: tema, salvo: salvoComSucesso, processado: true])
+        if(temaCommand.temaNovo) {
+            listar()
+        }else{
+            render(view: '/tema/detalharTema', model: [tema: tema, salvo: salvoComSucesso, processado: true])
+        }
     }
 
     def preRemover() {}
@@ -46,7 +55,7 @@ class TemaController {
 
     def alterarDestaque() {
 
-        //TODO Funcionalidade quebrada pós merge 03.07.2015 - equalizar metodos provenientes da listagem com metodos do detalhe
+        //TODO Funcionalidade quebrada pï¿½s merge 03.07.2015 - equalizar metodos provenientes da listagem com metodos do detalhe
         def temas = Tema.list()
         def tema = null
         def id = null

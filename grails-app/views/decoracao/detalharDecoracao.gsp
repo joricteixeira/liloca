@@ -2,7 +2,7 @@
     <meta name="layout" content="mainAdmin" />
 </head>
 <body>
-    <h3>${decoracao.tema.nome}</h3>
+    <a class="btn btn-danger" href="${createLink(url: "/admin/tema/${decoracao.tema.id}")}">voltar para tema: <span style="font-weight: bold;">${decoracao.tema.nome}</span></a>
 
     <g:render template="/templates/alteracoesSalvas" />
 

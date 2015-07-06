@@ -8,29 +8,31 @@
 <div class="container">
     <div class="well well-lg">
         <div class="row">
-            <g:formRemote name="buscarTema" update="updateMe"
+            %{--<g:formRemote name="buscarTema" update="updateMe"
                           before="jQuery('#loadingGif').attr('style','display: block')"
                           onComplete="jQuery('#loadingGif').attr('style','display: none')"
                           url="[controller: 'busca',
-                                action: 'buscarTema']">
+                                action: 'buscarTema']">--}%
+            <g:form url="/tema">
 
                 <div class="col-xs-12 col-sm-6 col-md-6">
-                    <g:textField id="digitado" name="nome" class="form-control" placeholder="Busque por um tema..."
-                                 onkeyup="this.form.onsubmit()">
+                    <g:textField id="digitado" name="nome" class="form-control" placeholder="Busque por um tema...">
                     </g:textField>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <select id="myselect" name="tipoOrdenacao" class="form-control"
-                            onchange="this.form.onsubmit()">
+                <div class="col-xs-11 col-sm-5 col-md-5">
+                    <select id="myselect" name="tipoOrdenacao" class="form-control">
                         <g:each in="${ordenacoesBusca}" var="ordenacao">
                             <option value="${ordenacao.identificador}">Ordenar por: ${ordenacao.valorExibicao}</option>
                         </g:each>
 
                     </select>
                 </div>
+                <div class="col-xs-1 col-sm-1 col-md-1">
+                    <input type="submit" value="Buscar" class="btn btn-danger">
+                </div>
 
-            </g:formRemote>
+            </g:form>
         </div>
     </div>
 

@@ -3,6 +3,7 @@
 </head>
 
 <body>
+    <a class="btn btn-danger" href="${createLink(url: "/admin/tema")}">voltar para <span style="font-weight: bold;">Listagem</span></a>
 
 <g:render template="/templates/alteracoesSalvas" />
 
@@ -38,6 +39,7 @@
 
 <div class="row">
     <h3>Decorações deste Tema</h3>
+    <a href="" class="btn btn-success">Adicionar decoração para este tema</a> <br><br>
     <ul class="list-group">
         <g:each in="${tema.decoracoes}" var="decoracao">
             <g:link url="/admin/tema/decoracao/${decoracao.id}  " class="list-group-item">

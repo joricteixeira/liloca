@@ -9,4 +9,6 @@ class TemaCommand {
     String nome
     boolean destaque
     boolean ativo
+
+    boolean temaNovo
 }

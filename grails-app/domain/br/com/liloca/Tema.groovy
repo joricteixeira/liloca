@@ -22,7 +22,11 @@ class Tema {
     }
 
     def Foto getFotoCapa() {
-        Foto.findByDecoracaoInListAndIsCapa(this.decoracoes, true)
+        if(this.decoracoes != null && this.decoracoes.size() > 0) {
+            return Foto.findByDecoracaoInListAndIsCapa(this.decoracoes, true)
+        }else{
+            return new Foto(url: "http://letsgodev.com/wp-content/uploads/2014/08/placeholder.png", titulo: "placeholder", isCapa: true)
+        }
     }
 
     boolean getVisivel(){

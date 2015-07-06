@@ -7,6 +7,10 @@
 
 <body>
 <h1 class="page-header">Lista de Temas</h1>
+
+<a class="btn btn-success" href="${createLink(url: "/admin/tema/novo")}">Cadastrar Novo Tema</a>
+<g:actionSubmit id="salvarDestaque" class="btn btn-default" action="alterarDestaque" value="Salvar Temas Destaques"/>
+
 <table class="table table-bordered table-striped">
     <tr>
         <td>#</td>
@@ -14,6 +18,7 @@
         <td class="text-center">Destaque</td>
         <td>Ações</td>
     </tr>
+
     <g:form name="formDestaque" onsubmit=" return validarTemasDestaques()" url="[controller: 'tema', action: 'alterarDestaque']">
         <g:each in="${temas}" var="tema">
             <tr
@@ -35,8 +40,6 @@
                 </td>
             </tr>
         </g:each>
-        <button class="btn btn-success">Cadastrar Novo Tema</button> &nbsp
-        <g:actionSubmit id="salvarDestaque" class="btn btn-default" action="alterarDestaque" value="Salvar Temas Destaques"/>
     </g:form>
     <br><br>
 </table>

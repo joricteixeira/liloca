@@ -19,6 +19,7 @@ class UrlMappings {
                 id(matches:"\\d+")
             }
         }
+        "/admin/tema/novo"(controller: "tema", action: "novo")
 
         "/admin/decoracao" (controller: "decoracao", action: "index")
         "/admin/tema/$id/decoracao" (controller: "decoracao", action: "listar")
