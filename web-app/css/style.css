@@ -73,14 +73,6 @@ li.no-decoration{
     list-style: none;
 }
 
-figure {
-    display: block;
-    -webkit-margin-before: 1em;
-    -webkit-margin-after: 1em;
-    -webkit-margin-start: 40px;
-    -webkit-margin-end: 40px;
-}
-
 figure.thumbnail{
     padding: 0;
     overflow: hidden;
