@@ -24,6 +24,8 @@ class UrlMappings {
 
         "/admin/decoracao" (controller: "decoracao", action: "index")
         "/admin/tema/$id/decoracao" (controller: "decoracao", action: "listar")
+        "/admin/tema/$id/decoracao/novo" (controller: "decoracao", action: "novo")
+        "/admin/tema/decoracao/$id/excluir" (controller: "decoracao", action: "excluir")
         "/admin/tema/decoracao/$id"{
             controller = "decoracao"
             action = [GET:"detalhar", POST:"atualizar"]
@@ -41,11 +43,13 @@ class UrlMappings {
 
         "500"(view:'/error')
 
+
         //TODO excluir para go-live
         "/$controller/$action?/$id?(.$format)?"{
             constraints {
                 // apply constraints here
             }
         }
+
 	}
 }

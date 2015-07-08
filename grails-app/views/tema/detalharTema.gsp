@@ -9,25 +9,23 @@
 
 <div class="row">
     <g:form uri="/admin/tema/${tema.id}">
-        <div class="well well-sm">
+        <div>
             <h3 class="text-center">Propriedades do Tema</h3>
 
-            <table class="table">
+            <table class="table table-bordered bg-success">
                 <tr>
-                    <td><label><h4>Nome:</h4></label></td>
-                    <td><input class="form-control" value="${tema.nome}" name="nome"></td>
+                    <th><label><h4>Nome:</h4></label></th>
+                    <th><label><h4>Destaque:</h4></label></th>
+                    <th><label><h4>Ativo:</h4></label></th>
                 </tr>
                 <tr>
-                    <td><label><h4>Destaque:</h4></label></td>
+                    <td><input class="form-control" value="${tema.nome}" name="nome"></td>
+                    <td><input type="checkbox" <g:if test="${tema.ativo}">checked="checked"</g:if> name="ativo"></td>
                     <td><input type="checkbox" <g:if test="${tema.destaque}">checked="checked"</g:if> name="destaque"></td>
                 </tr>
                 <tr>
-                    <td><label><h4>Ativo:</h4></label></td>
-                    <td><input type="checkbox" <g:if test="${tema.ativo}">checked="checked"</g:if> name="ativo"></td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <button class="btn btn-success" style="margin-bottom: 10px; height:50px;">Salvar modificações</button>
+                    <td colspan="3">
+                        <button class="btn btn-success">Salvar modificações</button>
                     </td>
                 </tr>
 
@@ -37,27 +35,43 @@
     </g:form>
 </div>
 
+<h3 class="text-center">Decorações</h3>
 <div class="row">
-    <h3>Decorações deste Tema</h3>
-    <a href="" class="btn btn-success">Adicionar decoração para este tema</a> <br><br>
-    <ul class="list-group">
-        <g:each in="${tema.decoracoes}" var="decoracao">
-            <g:link url="/admin/tema/decoracao/${decoracao.id}  " class="list-group-item">
-                <span class="badge">
-                    <g:formatNumber number="${decoracao.valor}" currencyCode="BRL" maxFractionDigits="2" minFractionDigits="2" type="currency" />
-                </span>
-                Decoração ${decoracao.nome}
-                <ul class="list-group">
-                    <g:each in="${decoracao.propriedades}" var="propriedade">
-                        <li class="list-group-item">
-                            ${propriedade.descricao}
-                        </li>
-                    </g:each>
-                </ul>
-            </g:link>
-        </g:each>
-    </ul>
+    <div class="text-right">
+        <a href="/admin/tema/${tema.id}/decoracao/novo" class="btn btn-success">Adicionar Nova Decoração</a>
+    </div>
 </div>
+<br>
+<div class="row bg-success">
+    <g:each in="${tema.decoracoes}" var="decoracao">
+        <div class="col-md-12 table-bordered">
+            <div class="row">
+                <div class="col-md-2">
+                    <h4>
+                        ${decoracao.nome} | <g:formatNumber number="${decoracao.valor}" currencyCode="BRL" maxFractionDigits="2" minFractionDigits="2" type="currency" />
+                    </h4>
+                </div>
+                <div class="col-md-10 text-right">
+                    <h4>
+                        <g:link class="btn btn-warning" url="/admin/tema/decoracao/${decoracao.id}">Alterar</g:link>
+                        <g:render template="/decoracao/modalConfirmacaoDelecaoDecoracao" model="[id:decoracao.id]" />
+                        <a href="" class="btn btn-success">Adicionar propriedade</a>
+                    </h4>
+                </div>
+            </div>
+            <ul class="list-group">
+                <g:each in="${decoracao.propriedades}" var="propriedade">
+                    <li class="list-group-item">
+                        ${propriedade.descricao}
+                    </li>
+                </g:each>
+            </ul>
+        </div>
+    </g:each>
+</div>
+
+
 
 <g:render template="/foto/listagemFoto" model="[fotos: tema.fotos]" />
 </body>
+
