@@ -55,7 +55,7 @@ environments {
     }
     production {
         dataSource {
-            url = "jdbc:mysql://mysql.liloca.com.br/liloca"
+            url = "jdbc:mysql://mydbinstance.ckikqxeor8ec.us-west-2.rds.amazonaws.com:3306/liloca"
             driverClassName = "com.mysql.jdbc.Driver"
             dialect = org.hibernate.dialect.MySQL5InnoDBDialect
             username = "liloca"
