@@ -11,7 +11,7 @@ class FotoController {
     }
 
     def definirCapa(){
-        //TODO Funcionalidade quebrada p�s merge 03.07.2015 - equalizar metodos provenientes da listagem com metodos do detalhe
+        //TODO Funcionalidade quebrada pos merge 03.07.2015 - equalizar metodos provenientes da listagem com metodos do detalhe
         def idFoto = Long.parseLong(params.idFoto)
         def idTema = Long.parseLong(params.idTema)
         def tema = Tema.findById(idTema)
@@ -29,18 +29,17 @@ class FotoController {
     def processarUpload(){
         String applicationPath = request.getSession().getServletContext().getRealPath("")
         String nome = new Date().time.toString()
-        String caminhoFotos = applicationPath+ "\\images\\uploads\\${nome}.png"
+        String caminhoFotos = applicationPath+ "\\images\\uploads\\IMG_${nome}.png"
 
         println("JRT[${caminhoFotos}]")
 
 
         def novo = new File(caminhoFotos)
 
-        novo.canRead()
-        novo.canWrite()
 
         def downloadedFile = request.getFile("file")
-        downloadedFile.tranferTo(novo)
+        println("name: $downloadedFile.name Originalfilename: $downloadedFile.originalFilename contentType: $downloadedFile.contentType")
+        downloadedFile.transferTo(novo)
     }
 
 
