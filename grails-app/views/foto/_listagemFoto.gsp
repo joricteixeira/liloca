@@ -1,8 +1,3 @@
-<div class="row">
-    <h3>Fotos deste Tema</h3>
-    <button class="btn btn-success">Adicionar novas fotos</button>
-    <button class="btn btn-danger">Deletar fotos selecionadas</button>
-</div>
 <div class="row" style="padding-top: 15px">
     <g:each in="${fotos}" var="foto">
         <div class="col-xs-12 col-sm-4 col-md-3">
@@ -31,9 +26,9 @@
             </div>
 
             <div class="col-xs-4 col-sm-4 col-md-4 text-left">
-                <h4 class="text-right">
-                    <g:link controller="foto" action="deletarFoto" params="[idFoto: foto.id]">Deletar</g:link>
-                </h4>
+                <h6 class="text-right">
+                    pertence à decoração [${foto.decoracao.nome}]
+                </h6>
             </div>
         </div>
         </div>

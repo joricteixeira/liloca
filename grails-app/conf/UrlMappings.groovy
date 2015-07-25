@@ -34,11 +34,19 @@ class UrlMappings {
             }
         }
 
-        "/admin/tema/decoracao/$id/propriedade" (controller: "propriedade", action: "index")
+        "/admin/tema/decoracao/$id/propriedade"{
+            controller = "propriedade"
+            action = [GET: "index", POST: "criar"]
+        }
         "/admin/tema/decoracao/propriedade/$id" (controller: "propriedade", action: "index")
+        "/admin/tema/decoracao/$decoracaoId/propriedade/$id/excluir" (controller: "propriedade", action: "excluir")
+        "/admin/tema/decoracao/propriedade/$id/excluir" (controller: "propriedade", action: "excluir")
 
         "/admin/foto" (controller: "foto", action: "index")
-        "/admin/tema/decoracao/$id/foto" (controller: "foto", action: "index")
+        "/admin/tema/decoracao/$id/foto"{
+            controller = "foto"
+            action = [GET: "index", POST: "processarUpload"]
+        }
         "/admin/tema/decoracao/foto/$id" (controller: "foto", action: "index")
 
         "500"(view:'/error')

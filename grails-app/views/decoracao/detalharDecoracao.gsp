@@ -36,19 +36,23 @@
             <div class="row">
                 <div class="col-md-12 text-right">
                     <h4>
-                        <button class="btn btn-success">Adicionar propriedades</button>
+                        <g:render template="modalCriacaoPropriedade" model="[id: decoracao.id]" />
                     </h4>
                 </div>
             </div>
             <ul class="list-group">
                 <g:each in="${decoracao.propriedades}" var="propriedade">
-                    <a href="#" class="list-group-item">
-                        ${propriedade.descricao}
-                    </a>
+
+                        <g:render template="modalConfirmacaoDelecaoPropriedade" model="[id: propriedade.id, descricao: propriedade.descricao, decoracaoId: decoracao.id]" />
+
                 </g:each>
             </ul>
         </div>
     </div>
 
+<div class="row">
+    <h3>Fotos desta Decoração</h3>
+    <a class="btn btn-success" href="/admin/tema/decoracao/${decoracao.id}/foto">Nova Foto</a>
+</div>
 <g:render template="/foto/listagemFoto" model="[fotos: decoracao.fotos]" />
 </body>

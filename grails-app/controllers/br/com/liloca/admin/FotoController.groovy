@@ -6,7 +6,9 @@ import grails.plugin.springsecurity.annotation.Secured
 @Secured(['ROLE_ADMIN'])
 class FotoController {
 
-    def index() {}
+    def index() {
+        render (view: "formNovaFoto", model: [decoracaoId: params.id])
+    }
 
     def definirCapa(){
         //TODO Funcionalidade quebrada p�s merge 03.07.2015 - equalizar metodos provenientes da listagem com metodos do detalhe
@@ -23,6 +25,24 @@ class FotoController {
     }
 
     def deletarFoto(){}
+
+    def processarUpload(){
+        String applicationPath = request.getSession().getServletContext().getRealPath("")
+        String nome = new Date().time.toString()
+        String caminhoFotos = applicationPath+ "\\images\\uploads\\${nome}.png"
+
+        println("JRT[${caminhoFotos}]")
+
+
+        def novo = new File(caminhoFotos)
+
+        novo.canRead()
+        novo.canWrite()
+
+        def downloadedFile = request.getFile("file")
+        downloadedFile.tranferTo(novo)
+    }
+
 
 }
 

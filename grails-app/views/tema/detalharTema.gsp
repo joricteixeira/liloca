@@ -53,9 +53,8 @@
                 </div>
                 <div class="col-md-10 text-right">
                     <h4>
-                        <g:link class="btn btn-warning" url="/admin/tema/decoracao/${decoracao.id}">Alterar</g:link>
+                        <g:link class="btn btn-warning" url="/admin/tema/decoracao/${decoracao.id}">Alterar | Detalhar</g:link>
                         <g:render template="/decoracao/modalConfirmacaoDelecaoDecoracao" model="[id:decoracao.id]" />
-                        <a href="" class="btn btn-success">Adicionar propriedade</a>
                     </h4>
                 </div>
             </div>
@@ -71,7 +70,11 @@
 </div>
 
 
-
+<div class="row">
+    <h3>Fotos deste Tema</h3>
+    <p class="text-info">para adicionar fotos abra a decoração específica</p>
+</div>
 <g:render template="/foto/listagemFoto" model="[fotos: tema.fotos]" />
+
 </body>
 

@@ -7,7 +7,7 @@ class DetalheController {
 
         def id = Integer.parseInt(params.id)
 
-        def tema = Tema.findByIdAndVisivel(id, true)
+        def tema = Tema.findByIdAndAtivo(id, true)
 
         if(tema){
             render (view: '/detalhe/detalhe', model: [tema: tema])
