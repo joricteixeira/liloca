@@ -5,6 +5,8 @@
 
 </head>
 <body>
+
+    <h2>Fotos para decoração ${decoracaoId}</h2>
     <a href="/admin/tema/decoracao/${decoracaoId}" class="btn btn-danger">Voltar</a>
 <br><br>
 
