@@ -1,4 +1,6 @@
 package br.com.liloca.admin
+
+import br.com.liloca.Decoracao
 import br.com.liloca.Foto
 import br.com.liloca.Tema
 import grails.plugin.springsecurity.annotation.Secured
@@ -29,17 +31,46 @@ class FotoController {
     def processarUpload(){
         String applicationPath = request.getSession().getServletContext().getRealPath("")
         String nome = new Date().time.toString()
-        String caminhoFotos = applicationPath+ "\\images\\uploads\\IMG_${nome}.png"
 
-        println("JRT[${caminhoFotos}]")
+        def downloadedFile = request.getFile("files[]") ?: request.getFile("file")
 
+        String extensao = downloadedFile.originalFilename.replaceAll("^([^.]+)","")
+        String sufixo = "\\images\\uploads\\IMG_${nome}"+ extensao
+        String caminhoFotos = applicationPath+ sufixo
 
         def novo = new File(caminhoFotos)
 
-
-        def downloadedFile = request.getFile("file")
-        println("name: $downloadedFile.name Originalfilename: $downloadedFile.originalFilename contentType: $downloadedFile.contentType")
         downloadedFile.transferTo(novo)
+
+        def decoracao = Decoracao.findById(Long.parseLong(params.id))
+
+        def fotoCriada = new Foto()
+        fotoCriada.decoracao = decoracao
+        fotoCriada.titulo = nome
+        fotoCriada.url = "/static"+ sufixo.replaceAll("\\\\","/")
+
+        if(fotoCriada.save()){
+
+
+            render(contentType: 'text/json'){
+                //["files":["0":["url":fotoCriada.url]]]
+
+                [
+                "files":[
+                        [
+                            "url":fotoCriada.url,
+                            "thumbnailUrl": fotoCriada.url,
+                            "name": downloadedFile.originalFilename,
+                            "type": downloadedFile.contentType,
+                            "size": downloadedFile.size
+                            ]
+                    ]
+                ]
+            }
+
+        }else{
+            render "2"
+        }
     }
 
 
