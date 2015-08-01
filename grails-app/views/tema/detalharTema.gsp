@@ -74,7 +74,7 @@
     <h3>Fotos deste Tema</h3>
     <p class="text-info">para adicionar fotos abra a decoração específica</p>
 </div>
-<g:render template="/foto/listagemFoto" model="[fotos: tema.fotos]" />
+<g:render template="/foto/listagemFoto" model="[fotos: tema.fotos, detalheTema: true]" />
 
 </body>
 

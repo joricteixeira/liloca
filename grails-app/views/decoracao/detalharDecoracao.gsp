@@ -54,5 +54,5 @@
     <h3>Fotos desta Decoração</h3>
     <a class="btn btn-success" href="/admin/tema/decoracao/${decoracao.id}/foto">Adicionar Fotos</a>
 </div>
-<g:render template="/foto/listagemFoto" model="[fotos: decoracao.fotos]" />
+    <g:render template="/foto/listagemFoto" model="[fotos: decoracao.fotos, detalheDecoracao: true]" />
 </body>
