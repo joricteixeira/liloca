@@ -2,34 +2,32 @@
 
 
     <table class="table">
-        <g:if test="${detalheTema}">
-            <tr>
-                <th></th>
+        <tr>
+            <th>foto</th>
+            <g:if test="${detalheTema}">
                 <th>pertence à decoração </th>
-                <th></th>
-            </tr>
+            </g:if>
+            <th>ações</th>
+        </tr>
             <g:each in="${fotos}" var="foto">
                 <tr>
                     <td><img src="${foto.url}" height="80"></td>
-                    <td>${foto.decoracao.nome}</td>
+                    <g:if test="${detalheTema}">
+                        <td>${foto.decoracao.nome}</td>
+                    </g:if>
                     <td>
-                        <g:if test="${!foto.isCapa}">
-                            <g:link class="btn btn-warning" controller="foto" action="definirCapa" params="[idFoto: foto.id, idTema: foto.decoracao.tema.id]">Definir como Capa</g:link>
+                        <g:if test="${detalheTema}">
+                            <g:if test="${!foto.isCapa}">
+                                <g:link class="btn btn-warning" controller="foto" action="definirCapa" params="[idFoto: foto.id, idTema: foto.decoracao.tema.id]">Definir como Capa</g:link>
+                            </g:if>
+                            <g:else>
+                                <span class="btn btn-success">Foto de Capa</span>
+                            </g:else>
                         </g:if>
-                        <g:else>
-                            <span class="btn btn-success">Foto de Capa</span>
-                        </g:else>
+                        <a class="btn btn-danger" href="/admin/tema/decoracao/${foto.id}/foto/deletar">Excluir foto</a>
                     </td>
                 </tr>
             </g:each>
-        </g:if>
-        <g:elseif test="${detalheDecoracao}">
-            <g:each in="${fotos}" var="foto">
-                <tr >
-                    <img src="${foto.url}" height="150">
-                </tr>
-            </g:each>
-        </g:elseif>
     </table>
 
 

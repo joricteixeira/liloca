@@ -26,16 +26,16 @@ class TemaController {
 
         def tema = Tema.findById(id)
 
-        render(view: '/tema/detalharTema', model: [tema: tema])
+        def from = Integer.parseInt(params.from ?: "0")
+
+        render(view: '/tema/detalharTema', model: [tema: tema, from: from])
     }
 
     def atualizar(TemaCommand temaCommand) {
 
-        //TODO equalizar metodos provenientes da listagem com metodos do detalhe
-
         def tema = Tema.findById(temaCommand.id) ?:new Tema()
 
-        tema.nome = temaCommand.nome
+        tema.nome = temaCommand.nome ?: tema.nome
         tema.destaque = temaCommand.destaque
         tema.ativo = temaCommand.ativo
 
@@ -58,7 +58,6 @@ class TemaController {
 
     def alterarDestaque() {
 
-        //TODO Funcionalidade quebrada p�s merge 03.07.2015 - equalizar metodos provenientes da listagem com metodos do detalhe
         def temas = Tema.list()
         def tema = null
         def id = null

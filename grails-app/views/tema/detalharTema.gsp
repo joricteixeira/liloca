@@ -6,6 +6,7 @@
     <a class="btn btn-danger" href="${createLink(url: "/admin/tema")}">voltar para <span style="font-weight: bold;">Listagem</span></a>
 
 <g:render template="/templates/alteracoesSalvas" />
+<g:render template="/tema/from" />
 
 <div class="row">
     <g:form uri="/admin/tema/${tema.id}">
@@ -20,8 +21,8 @@
                 </tr>
                 <tr>
                     <td><input class="form-control" value="${tema.nome}" name="nome"></td>
-                    <td><input type="checkbox" <g:if test="${tema.ativo}">checked="checked"</g:if> name="ativo"></td>
                     <td><input type="checkbox" <g:if test="${tema.destaque}">checked="checked"</g:if> name="destaque"></td>
+                    <td><input type="checkbox" <g:if test="${tema.ativo}">checked="checked"</g:if> name="ativo"></td>
                 </tr>
                 <tr>
                     <td colspan="3">

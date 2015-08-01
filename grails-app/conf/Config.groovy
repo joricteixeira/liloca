@@ -93,12 +93,12 @@ environments {
     development {
         grails.app.context = "/"
         grails.logging.jul.usebridge = true
-        grails.serverURL = "http://localhost:9002/liloca"
+        grails.serverURL = "http://localhost:9002"
     }
     production {
         grails.app.context = "/"
         grails.logging.jul.usebridge = false
-        grails.serverURL = "http://www.liloca.com.br/liloca"
+        grails.serverURL = "http://www.liloca.com.br"
     }
 }
 

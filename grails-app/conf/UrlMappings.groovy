@@ -20,6 +20,8 @@ class UrlMappings {
             }
         }
         "/admin/tema/novo"(controller: "tema", action: "novo")
+        "/admin/tema/$id/ativar"(controller: "tema", action: "atualizar")
+        "/admin/tema/$id/desativar"(controller: "tema", action: "atualizar")
         "/admin/tema/$id/excluir" (controller: "tema", action: "excluir")
 
         "/admin/decoracao" (controller: "decoracao", action: "index")
@@ -47,9 +49,12 @@ class UrlMappings {
             controller = "foto"
             action = [GET: "index", POST: "processarUpload"]
         }
+        "/admin/tema/decoracao/$id/foto/deletar"(controller: "foto", action: "deletarFoto")
         "/admin/tema/decoracao/foto/$id" (controller: "foto", action: "index")
+        "/admin/tema/$idTema/decoracao/foto/$idFoto" (controller: "foto", action: "definirCapa")
 
         "500"(view:'/error')
+
 
 
         //TODO excluir para go-live
@@ -58,6 +63,7 @@ class UrlMappings {
                 // apply constraints here
             }
         }
+
 
 	}
 }

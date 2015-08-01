@@ -10,8 +10,8 @@ class TemaCommand {
 
     Long id
     String nome
-    boolean destaque
-    boolean ativo
+    Boolean destaque
+    Boolean ativo
 
-    boolean temaNovo
+    Boolean temaNovo
 }

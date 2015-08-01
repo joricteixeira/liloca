@@ -26,10 +26,20 @@ class FotoController {
         def foto = Foto.findById(idFoto)
         foto.isCapa = true
 
-        render "Capa alterada com sucesso! <br><br> <a href='/admin/tema/${idTema}'>Voltar para o Tema</a>"
+        //render "Capa alterada com sucesso! <br><br> <a href='/admin/tema/${idTema}'>Voltar para o Tema</a>"
+        redirect(controller: "tema", action: "detalhar", params: [id: idTema])
     }
 
-    def deletarFoto(){}
+    def deletarFoto(){
+        def idFoto = Long.parseLong(params.id)
+        def foto = Foto.findAllById(idFoto)
+        def temaId = foto[0].decoracao.tema.id
+
+        Foto.deleteAll(foto)
+
+        def link = createLink(url: "/admin/tema/${temaId}?from=1")
+        redirect(url: link)
+    }
 
     def processarUpload(){
         String applicationPath = request.getSession().getServletContext().getRealPath("")

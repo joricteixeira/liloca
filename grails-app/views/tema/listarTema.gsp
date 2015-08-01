@@ -29,12 +29,12 @@
                     <g:checkBox name="temaDestaque" checked="${tema.destaque}" value="${tema.id}"/>
                 </td>
                 <td>
-                    <a href="${createLink(url: "/admin/tema/${tema.id}")}" class="btn btn-warning">Alterar Tema</a>
+                    <a href="${createLink(url: "/admin/tema/${tema.id}")}" class="btn btn-warning">Alterar | Detalhar</a>
                     <g:if test="${tema.ativo}">
-                        <g:link id="botaoDesativar" controller="tema" action="atualizar" params="[acao: 'desativar', idTema: tema.id]" class="btn btn-primary">Desativar Tema</g:link>
+                        <a id="botaoDesativar" href="/admin/tema/${tema.id}/desativar?ativo=false" class="btn btn-primary">Desativar</a>
                     </g:if>
                     <g:else>
-                        <g:link id="botaoAtivar" controller="tema" action="atualizar" params="[acao: 'ativar', idTema: tema.id]" class="btn btn-success">Ativar Tema</g:link>
+                        <a id="botaoAtivar" href="/admin/tema/${tema.id}/ativar?ativo=true" class="btn btn-success">Ativar</a>
                     </g:else>
 
                     <g:render template="modalConfirmarDeleção" model="[id: tema.id]"/>
