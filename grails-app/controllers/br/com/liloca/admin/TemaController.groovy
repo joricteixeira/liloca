@@ -36,8 +36,8 @@ class TemaController {
         def tema = Tema.findById(temaCommand.id) ?:new Tema()
 
         tema.nome = temaCommand.nome ?: tema.nome
-        tema.destaque = temaCommand.destaque
-        tema.ativo = temaCommand.ativo
+        tema.destaque = temaCommand.destaque != null ? temaCommand.destaque: tema.destaque
+        tema.ativo = temaCommand.ativo != null ? temaCommand.ativo : tema.ativo
 
         def salvoComSucesso = tema.save()
 
@@ -79,6 +79,23 @@ class TemaController {
         }
 
         redirect(action: "listar")
+    }
 
+    def ativar(){
+        def id = Long.parseLong(params.id)
+        def tema = Tema.findById(id)
+        tema.ativo = true
+        tema.save()
+
+        redirect(action: "listar")
+    }
+
+    def desativar(){
+        def id = Long.parseLong(params.id)
+        def tema = Tema.findById(id)
+        tema.ativo = false
+        tema.save()
+
+        redirect(action: "listar")
     }
 }

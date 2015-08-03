@@ -20,8 +20,8 @@ class UrlMappings {
             }
         }
         "/admin/tema/novo"(controller: "tema", action: "novo")
-        "/admin/tema/$id/ativar"(controller: "tema", action: "atualizar")
-        "/admin/tema/$id/desativar"(controller: "tema", action: "atualizar")
+        "/admin/tema/$id/ativar"(controller: "tema", action: "ativar")
+        "/admin/tema/$id/desativar"(controller: "tema", action: "desativar")
         "/admin/tema/$id/excluir" (controller: "tema", action: "excluir")
 
         "/admin/decoracao" (controller: "decoracao", action: "index")

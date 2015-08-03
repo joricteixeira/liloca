@@ -9,7 +9,7 @@
 <h1 class="page-header">Lista de Temas</h1>
 
 <a class="btn btn-success" href="${createLink(url: "/admin/tema/novo")}">Cadastrar Novo Tema</a>
-<g:actionSubmit id="salvarDestaque" class="btn btn-default" action="alterarDestaque" value="Salvar Temas Destaques"/>
+
 
 <table class="table table-bordered table-striped">
     <tr>
@@ -20,6 +20,7 @@
     </tr>
 
     <g:form name="formDestaque" onsubmit=" return validarTemasDestaques()" url="[controller: 'tema', action: 'alterarDestaque']">
+        <g:actionSubmit id="salvarDestaque" class="btn btn-default" action="alterarDestaque" value="Salvar Temas Destaques"/>
         <g:each in="${temas}" var="tema">
             <tr
                 <g:if test="${tema.destaque}">class="info"</g:if>>
@@ -31,10 +32,10 @@
                 <td>
                     <a href="${createLink(url: "/admin/tema/${tema.id}")}" class="btn btn-warning">Alterar | Detalhar</a>
                     <g:if test="${tema.ativo}">
-                        <a id="botaoDesativar" href="/admin/tema/${tema.id}/desativar?ativo=false" class="btn btn-primary">Desativar</a>
+                        <a id="botaoDesativar" href="/admin/tema/${tema.id}/desativar" class="btn btn-primary">Desativar</a>
                     </g:if>
                     <g:else>
-                        <a id="botaoAtivar" href="/admin/tema/${tema.id}/ativar?ativo=true" class="btn btn-success">Ativar</a>
+                        <a id="botaoAtivar" href="/admin/tema/${tema.id}/ativar" class="btn btn-success">Ativar</a>
                     </g:else>
 
                     <g:render template="modalConfirmarDeleção" model="[id: tema.id]"/>
@@ -46,7 +47,7 @@
 </table>
 <script>
 
-    $(document).ready(alertaTemaDestaque)
+    $(document).ready(alertaTemaDestaque);
 
     $("input:checkbox").click(function () {
 
