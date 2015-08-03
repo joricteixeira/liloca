@@ -8,8 +8,7 @@ class UrlMappings {
 
         //Admin
         "/admin" (controller: "dashBoard", action: "index")
-        "/admin/recebidas"(controller: "dashBoard", action: "mensagensRecebidas")
-        "/admin/enviadas" (controller: "dashBoard", action: "mensagensEnviadas")
+        "/admin/mensagensLidas" (controller: "dashBoard", action:  "mensagensLidas")
 
         "/admin/tema" (controller: "tema", action: "listar")
         "/admin/tema/$id"{
@@ -52,6 +51,10 @@ class UrlMappings {
         "/admin/tema/decoracao/$id/foto/deletar"(controller: "foto", action: "deletarFoto")
         "/admin/tema/decoracao/foto/$id" (controller: "foto", action: "index")
         "/admin/tema/$idTema/decoracao/foto/$idFoto" (controller: "foto", action: "definirCapa")
+
+
+        "/admin/mensagem/$id/marcarLida" (controller: "dashBoard", action: "marcarLida")
+        "/admin/mensagem/$id/marcarNaoLida" (controller: "dashBoard", action: "marcarNaoLida")
 
         "500"(view:'/error')
 

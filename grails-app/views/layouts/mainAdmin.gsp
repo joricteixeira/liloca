@@ -51,8 +51,9 @@
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
                 <div style="min-height: 10px"></div>
-                <li class="active"><a href="${createLink(controller: 'dashBoard', action: 'index')}">Dashboard<span class="sr-only">(current)</span></a></li>
-                <li><a href="${createLink(controller: 'tema', action: 'listar')}">Listar Temas<span class="sr-only">(current)</span></a></li>
+                <li><a href="/admin">Mensagens Novas</a></li>
+                <li><a href="/admin/mensagensLidas">Mensagens Lidas</a></li>
+                <li><a href="${createLink(controller: 'tema', action: 'listar')}">Cadastro de Temas<span class="sr-only">(current)</span></a></li>
             </ul>
         </div>
 
