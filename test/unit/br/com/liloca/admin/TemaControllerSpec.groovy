@@ -43,7 +43,7 @@ class TemaControllerSpec extends Specification {
 
 
         when:
-            controller.atualizaTema(command)
+            controller.atualizar(command)
         then:
             tema.ativo == resultadoAtivo
             tema.destaque == resultadoDestaque
